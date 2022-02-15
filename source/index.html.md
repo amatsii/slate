@@ -30,9 +30,9 @@ When enterprise features is provided to you, you will be able to see the busines
 
 The Reveknew API can be accessed via the base urls below.
 
-`Production base url: https://api.reveknew.net`
+Production base url: `https://api.reveknew.net`
 
-`UAT base url: https://uat.api.reveknew.net`
+UAT base url: `https://uat.api.reveknew.net`
 
 # Authentication
 This API supports this mode of authentication:
