@@ -32,6 +32,7 @@ The Reveknew API can be accessed via the base urls below.
 
 Production base url: `https://api.reveknew.net`
 
+
 UAT base url: `https://uat.api.reveknew.net`
 
 # Authentication
