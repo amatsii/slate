@@ -44,7 +44,7 @@ curl https://api.reveknew.net/enterprise/v1/customers/53e08b340cd983/id/f27a7b17
 ```
 
 ## OAuth2
-To make calls to this API, you will need to be authenticated via OAuth2. You will need a clientId and clientSecret from the Enterprise section of the Reveknew dashboard.
+To make calls to this API, you will need to be authenticated via OAuth2.You will need a clientId and clientSecret from the Enterprise section of the Reveknew dashboard.
 You will need to perform the following operation to get an access token.
 
 `POST https://auth.reveknew.net/oauth/token
@@ -57,9 +57,9 @@ Any further API call now needs to include the access token in the `Authorization
 # Customers
 
 ## Create a customer record under a business account
-
+> **Example Request**
 ```json
-  {
+ {
     "customerNum" : "4515",
     "email" : "JoeyEGosselin@jourrapide.com",
     "firstName" : "Joey",
@@ -139,6 +139,19 @@ This endpoint updates a customer record under a business account
 | 404  | Invalid businessId supplied                         |
 
 ## Find customer record by its id
+
+```json
+  {
+    "customerNum": "7784",
+    "email": "KimBlake@centme.com",
+    "firstName": "Kim",
+    "id": "d17ecab2-8a63-11bn-a8a3-8942ac120002",
+    "lastName": "Blake",
+    "phoneNo": "0552740129"
+  }
+
+```
+
 This endpoint finds  customer record by its id 
 
 ### HTTP Request
