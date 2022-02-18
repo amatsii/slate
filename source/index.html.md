@@ -602,6 +602,19 @@ This endpoint creates a tier under a business account
 
 ## Get a tier record by it's id
 
+```json
+  {
+    "amount": 35800,
+    "billingPeriod": "ONCE",
+    "deductions": 0,
+    "graceDays": 0,
+    "id": "576f3640-90a3-11ec-b909-0242ac120002",
+    "name": "David J. Brown",
+    "policy": "TIER",
+    "reminderDays": 2
+  }
+```
+
 This endpoint  Get a tier record by it's id
 
 ### HTTP Request
