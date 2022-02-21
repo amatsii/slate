@@ -57,7 +57,9 @@ Any further API call now needs to include the access token in the `Authorization
 # Customers
 
 ## Create a customer record under a business account
+
 > **Example Request**
+
 ```json
  {
     "customerNum" : "4515",
@@ -143,6 +145,7 @@ This endpoint updates a customer record under a business account
 ## Find customer record by its id
 
 >**Example Response**
+
 ```json
   {
     "customerNum": "7784",
@@ -422,7 +425,9 @@ This endpoint updates a PaymentSchedule record
 | 404  | Invalid businessId supplied                    |
 
 ## Resend SMS notification of payment 
+
 > **Example notification of payment**
+
 ```json
   {
     "amount": 64913,
@@ -493,7 +498,9 @@ This endpoint schedule payments for this subscription using the dates and amount
 | 403  | Operation not permitted for this business      |
 | 404  | Invalid businessId supplied                    |
 ## Schedule payments for this subscription using the order and amounts specified in the body
+
 > **Example Request**
+
 ```json
   {
     "amount": 56827,
@@ -563,7 +570,9 @@ This endpoint finds all subscriptions for a customer by customerId
 # Tiers
 
 ## Create a tier under a business account
+
 > **Example Request**
+
 ```json
   {
     "amount": 102185,
@@ -606,6 +615,7 @@ This endpoint creates a tier under a business account
 | 404  | Invalid businessId or  supplied            |
 
 ## Get a tier record by its id
+
 > **Example Response**
 
 ```json
@@ -647,7 +657,9 @@ This endpoint gets a tier record by its id
 | 404  | Invalid businessId or tierId supplied     |
 
 ## Update a tier under a business account
+
 > **Example Request**
+
 ```json
  {
     "amount": 832964,
