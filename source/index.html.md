@@ -563,7 +563,7 @@ This endpoint finds all subscriptions for a customer by customerId
 # Tiers
 
 ## Create a tier under a business account
-> **Example Response**
+> **Example Request**
 ```json
   {
     "amount": 102185,
@@ -606,7 +606,7 @@ This endpoint creates a tier under a business account
 | 404  | Invalid businessId or  supplied            |
 
 ## Get a tier record by its id
-> **Example Request**
+> **Example Response**
 
 ```json
   {
