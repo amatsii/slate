@@ -182,7 +182,7 @@ This endpoint finds  customer record by its id
 
 
 
-#Subscriptions 
+# Subscriptions
 
 
 ## Create a subscription record under a business account
