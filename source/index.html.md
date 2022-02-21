@@ -100,6 +100,8 @@ This endpoint creates a customer record under a business account
 
 ## Update a Customer record under a business account
 
+> **Example Request**
+
 ```json
   {
     "customerNum" : "77014",
@@ -143,16 +145,12 @@ This endpoint updates a customer record under a business account
 >**Example Response**
 ```json
   {
-  "body": {
     "customerNum": "7784",
     "email": "KimBlake@centme.com",
     "firstName": "Kim",
     "id": "d17ecab2-8a63-11bn-a8a3-8942ac120002",
     "lastName": "Blake",
     "phoneNo": "0552740129"
-  },
-  "statusCode": "200 OK",
-  "statusCodeValue": 0
   }
 
 ```
@@ -182,10 +180,14 @@ This endpoint finds  customer record by its id
 | 403  | Operation not permitted for this business |
 | 404  | Invalid businessId supplied               |
 
-# Subscriptions
+
+
+#Subscriptions 
 
 
 ## Create a subscription record under a business account
+
+> **Example Request**
 
 ```json
   {
@@ -377,6 +379,8 @@ This endpoint pauses a subscription record under a business account
 
 ## Update a PaymentSchedule record
 
+> **Example Request**
+
 ```json
   {
     "amount": 93874,
@@ -418,6 +422,7 @@ This endpoint updates a PaymentSchedule record
 | 404  | Invalid businessId supplied                    |
 
 ## Resend SMS notification of payment 
+> **Example notification of payment**
 ```json
   {
     "amount": 64913,
@@ -488,7 +493,7 @@ This endpoint schedule payments for this subscription using the dates and amount
 | 403  | Operation not permitted for this business      |
 | 404  | Invalid businessId supplied                    |
 ## Schedule payments for this subscription using the order and amounts specified in the body
-
+> **Example Request**
 ```json
   {
     "amount": 56827,
@@ -558,7 +563,7 @@ This endpoint finds all subscriptions for a customer by customerId
 # Tiers
 
 ## Create a tier under a business account
-
+> **Example Response**
 ```json
   {
     "amount": 102185,
@@ -600,7 +605,8 @@ This endpoint creates a tier under a business account
 | 403  | Operation not permitted for this business  |
 | 404  | Invalid businessId or  supplied            |
 
-## Get a tier record by it's id
+## Get a tier record by its id
+> **Example Request**
 
 ```json
   {
@@ -615,7 +621,7 @@ This endpoint creates a tier under a business account
   }
 ```
 
-This endpoint  Get a tier record by it's id
+This endpoint gets a tier record by its id
 
 ### HTTP Request
 
@@ -641,7 +647,7 @@ This endpoint  Get a tier record by it's id
 | 404  | Invalid businessId or tierId supplied     |
 
 ## Update a tier under a business account
-
+> **Example Request**
 ```json
  {
     "amount": 832964,
