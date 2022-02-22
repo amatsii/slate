@@ -81,11 +81,10 @@ This endpoint creates a customer record under a business account
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| customer*required    | customer    |
-| *(body)*             |             |
+| `businessId`         | businessId  |
+| *string*             |             |
+| `customer`           | customer    |
+| *body*               |             |
 
 ### Responses
 
@@ -125,11 +124,10 @@ This endpoint updates a customer record under a business account
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| customer*required    | customer    |
-| *(body)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `customer`           | customer    |
+| *body*               |             |
 
 ### Responses
 
@@ -168,11 +166,10 @@ This endpoint finds  customer record by its id
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| customer*required    | customer    |
-| *(body)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `customer`           | customer    |
+| *body*               |             |
 
 ### Responses
 
@@ -235,13 +232,12 @@ This endpoint creates a subscription record under a business account
 
 ### Query Parameters
 
-| Parameter             | Description  |
-|-----------------------|--------------|
-| businessId *required  | businessId   | 
-| string                |              |
-| *(path)*              |              |
-| subscription*required | subscription |
-| *(body)*              |              |
+| Parameter            | Description |
+|----------------------|-------------|
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `subscription`       | subscription|
+| *body*               |             |
 
 ### Responses
 
@@ -265,14 +261,12 @@ This endpoint finds a subscription record under a business account by id
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-|  *(path)*               |                |
+| Parameter            | Description   |
+|----------------------|---------------|
+| `businessId`         | businessId    |
+| *string*, *path*     |               |
+| `subscriptionId`     | subscriptionId|
+| *string*, *path*     |               |
 
 ### Responses
 
@@ -297,15 +291,12 @@ This endpoint finds a scheduled payment under a business account by id
 
 | Parameter               | Description         |
 |-------------------------|---------------------|
-| businessId *required    | businessId          |
-| string                  |                     |
-| *(path)*                |                     |
-| subscriptionId*required | subscriptionId      |
-| string                  |                     |
-| *(path)*                |                     |
-| scheduledId*required    | scheduleId          |
-| string                  |                     |
-|  *(path)*               |                     |
+| `businessId`            | businessId          |
+| *string*, *path*        |                     |
+| `subscriptionId`        | subscriptionId      |
+|  *string*, *path*       |                     |
+| `scheduledId`           | scheduleId          |
+|  *string*, *path*       |                     |
 
 ### Responses
 
@@ -328,14 +319,12 @@ This endpoint cancels a subscription record under a business account by id
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-|  *(path)*               |                |
+| Parameter            | Description   |
+|----------------------|---------------|
+| `businessId`         | businessId    |
+| *string*, *path*     |               |
+| `subscriptionId`     | subscriptionId|
+| *string*, *path*     |               |
 
 ### Responses
 
@@ -359,14 +348,12 @@ This endpoint pauses a subscription record under a business account
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-| *(path)*                |                |
+| Parameter            | Description   |
+|----------------------|---------------|
+| `businessId`         | businessId    |
+| *string*, *path*     |               |
+| `subscriptionId`     | subscriptionId|
+| *string*, *path*     |               |
 
 ### Responses
 
@@ -406,13 +393,13 @@ This endpoint updates a PaymentSchedule record
 
 | Parameter            | Description      |
 |----------------------|------------------|
-| businessId *required | businessId       |
-| string               |                  |
-| *(path)*             |                  |
-| customer*required    | customer         |
-| *(body)*             |                  |
-| updateRequestDto     | updateRequestDto |
-|  *(body)*            |                  |
+| `businessId`         | businessId       |
+|  *string*, *path*    |                  |
+| `customer`           | customer         |
+|  *body*              |                  |
+| `updateRequestDto`   | updateRequestDto |
+|  *body*              |                  |
+
 ### Responses
 
 | Code | Description                                    |
@@ -444,14 +431,13 @@ This endpoint resends SMS notification of payment
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-| *(path)*                |                |
+| Parameter            | Description   |
+|----------------------|---------------|
+| `businessId`         | businessId    |
+| *string*, *path*     |               |
+| `subscriptionId`     | subscriptionId|
+| *string*, *path*     |               |
+
 
 ### Responses
 
@@ -476,16 +462,14 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-| *(body)*                |                |
-| payments*required       | payments       |
-| (body)                  |                |
+| Parameter            | Description      |
+|----------------------|------------------|
+| `businessId`         | businessId       |
+|  *string*, *path*    |                  |
+| `subscriptionId`     | subscriptionId   |
+|  *string*, *body*    |                  |
+| `payments`           | payments         |
+|  *body*              |                  |
 
 ### Responses
 
@@ -517,16 +501,14 @@ This endpoint schedule payments for this subscription using the order and amount
 
 ### Query Parameters
 
-| Parameter               | Description    |
-|-------------------------|----------------|
-| businessId *required    | businessId     |
-| string                  |                |
-| *(path)*                |                |
-| subscriptionId*required | subscriptionId |
-| string                  |                |
-| *(path)*                |                |
-| payments*required       | payments       |
-| *(body)*                |                |
+| Parameter            | Description      |
+|----------------------|------------------|
+| `businessId`         | businessId       |
+|  *string*, *path*    |                  |
+| `subscriptionId`     | subscriptionId   |
+|  *string*, *body*    |                  |
+| `payments`           | payments         |
+|  *body*              |                  |
 
 ### Responses
 
@@ -551,12 +533,10 @@ This endpoint finds all subscriptions for a customer by customerId
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| customerId*required  | customerId  |
-| string               |             |
-| *(path)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `customer`           | customerId  |
+| *string*, *path*     |             |
 
 ### Responses
 
@@ -597,11 +577,10 @@ This endpoint creates a tier under a business account
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| tier*required        | tier        |
-| *(body)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `tier`               | tier        |
+| *body*               |             |
 
 ### Responses
 
@@ -641,11 +620,10 @@ This endpoint gets a tier record by its id
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| tierId*required      | tierId      |
-| *(path)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `tierId`             | tierId      |
+| *path*               |             |
 
 ### Responses
 
@@ -686,14 +664,12 @@ This endpoint updates a tier under a business account
 
 | Parameter            | Description |
 |----------------------|-------------|
-| businessId *required | businessId  |
-| string               |             |
-| *(path)*             |             |
-| tier*required        | tier        |
-| string               |             |
-| *(path)*             |             |
-| tier*required        | tier        |
-| *(body)*             |             |
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `tier`               | tier        |
+| *string*, *path*     |             |
+| `tier`               | tier        |
+| *body*               |             |
 
 ### Responses
 
