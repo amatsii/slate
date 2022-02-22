@@ -610,6 +610,7 @@ This endpoint creates a tier under a business account
   }
 ```
 
+
 This endpoint gets a tier record by its id
 
 ### HTTP Request
