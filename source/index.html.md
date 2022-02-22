@@ -142,7 +142,6 @@ This endpoint updates a customer record under a business account
 
 ## Find customer record by its id
 
-
 ```json
   {
     "customerNum": "7784",
