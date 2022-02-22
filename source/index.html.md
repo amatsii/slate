@@ -58,7 +58,7 @@ Any further API call now needs to include the access token in the `Authorization
 
 ## Create a customer record under a business account
 
-> **Example Request**
+> **Example Customer body**
 
 ```json
  {
@@ -77,12 +77,12 @@ This endpoint creates a customer record under a business account
 
 `POST`  /enterprise/v1/customers/{businessId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
 | `businessId`         | businessId  |
-| *string*             |             |
+| *string*, *path*     |             |
 | `customer`           | customer    |
 | *body*               |             |
 
@@ -101,7 +101,7 @@ This endpoint creates a customer record under a business account
 
 ## Update a Customer record under a business account
 
-> **Example Request**
+> **Example Customer body**
 
 ```json
   {
@@ -120,7 +120,7 @@ This endpoint updates a customer record under a business account
 
 `PUT`  /enterprise/v1/customers/{businessId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
@@ -142,7 +142,7 @@ This endpoint updates a customer record under a business account
 
 ## Find customer record by its id
 
->**Example Customer body**
+>**Example Customer response**
 
 ```json
   {
@@ -162,14 +162,14 @@ This endpoint finds  customer record by its id
 
 `GET` /enterprise/v1/customers/{businessId}/id/{customerId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
 | `businessId`         | businessId  |
 | *string*, *path*     |             |
-| `customer`           | customer    |
-| *body*               |             |
+| `customerId`         | customerId  |
+| *string*, *path*     |             |
 
 ### Responses
 
@@ -187,7 +187,7 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
-> **Example Request**
+> **Example Subscription body**
 
 ```json
   {
@@ -230,7 +230,7 @@ This endpoint creates a subscription record under a business account
 
 `POST`  /enterprise/v1/subscriptions/{businessId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
@@ -259,7 +259,7 @@ This endpoint finds a subscription record under a business account by id
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description   |
 |----------------------|---------------|
@@ -287,12 +287,12 @@ This endpoint finds a scheduled payment under a business account by id
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/{scheduleId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter               | Description         |
 |-------------------------|---------------------|
 | `businessId`            | businessId          |
-| *string*, *path*        |                     |
+|  *string*, *path*       |                     |
 | `subscriptionId`        | subscriptionId      |
 |  *string*, *path*       |                     |
 | `scheduledId`           | scheduleId          |
@@ -317,7 +317,7 @@ This endpoint cancels a subscription record under a business account by id
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/cancel
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description   |
 |----------------------|---------------|
@@ -346,7 +346,7 @@ This endpoint pauses a subscription record under a business account
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/pause
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description   |
 |----------------------|---------------|
@@ -369,7 +369,7 @@ This endpoint pauses a subscription record under a business account
 
 ## Update a PaymentSchedule record
 
-> **Example Request**
+> **Example PaymentSchedule body**
 
 ```json
   {
@@ -389,14 +389,14 @@ This endpoint updates a PaymentSchedule record
 
 `PUT`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description      |
 |----------------------|------------------|
 | `businessId`         | businessId       |
 |  *string*, *path*    |                  |
-| `customer`           | customer         |
-|  *body*              |                  |
+| `subscriptionId`     | subscriptionId   |
+|  *string*, *path*    |                  |
 | `updateRequestDto`   | updateRequestDto |
 |  *body*              |                  |
 
@@ -429,7 +429,7 @@ This endpoint resends SMS notification of payment
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description   |
 |----------------------|---------------|
@@ -460,14 +460,14 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 `POST`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule/date
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description      |
 |----------------------|------------------|
 | `businessId`         | businessId       |
 |  *string*, *path*    |                  |
 | `subscriptionId`     | subscriptionId   |
-|  *string*, *body*    |                  |
+|  *string*, *path*    |                  |
 | `payments`           | payments         |
 |  *body*              |                  |
 
@@ -481,9 +481,10 @@ This endpoint schedule payments for this subscription using the dates and amount
 | 401  | Unauthorized                                   |
 | 403  | Operation not permitted for this business      |
 | 404  | Invalid businessId supplied                    |
+
 ## Schedule payments for this subscription using the order and amounts specified in the body
 
-> **Example Request**
+> **Example request**
 
 ```json
   {
@@ -499,14 +500,14 @@ This endpoint schedule payments for this subscription using the order and amount
 
 `POST`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule/order
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description      |
 |----------------------|------------------|
 | `businessId`         | businessId       |
 |  *string*, *path*    |                  |
 | `subscriptionId`     | subscriptionId   |
-|  *string*, *body*    |                  |
+|  *string*, *path*    |                  |
 | `payments`           | payments         |
 |  *body*              |                  |
 
@@ -529,13 +530,13 @@ This endpoint finds all subscriptions for a customer by customerId
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/customer/{customerId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
 | `businessId`         | businessId  |
 | *string*, *path*     |             |
-| `customer`           | customerId  |
+| `customerId`         | customerId  |
 | *string*, *path*     |             |
 
 ### Responses
@@ -551,7 +552,7 @@ This endpoint finds all subscriptions for a customer by customerId
 
 ## Create a tier under a business account
 
-> **Example Request**
+> **Example Tier body**
 
 ```json
   {
@@ -573,7 +574,7 @@ This endpoint creates a tier under a business account
 
 `POST`  /enterprise/v1/tiers/{businessId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
@@ -595,7 +596,7 @@ This endpoint creates a tier under a business account
 
 ## Get a tier record by its id
 
->**Example Tier body**
+>**Example Tier response**
 
 ```json
   {
@@ -616,14 +617,14 @@ This endpoint gets a tier record by its id
 
 `GET` /enterprise/v1/tiers/{businessId}/{tierId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
 | `businessId`         | businessId  |
 | *string*, *path*     |             |
 | `tierId`             | tierId      |
-| *path*               |             |
+| *string*, *path*     |             |
 
 ### Responses
 
@@ -636,7 +637,7 @@ This endpoint gets a tier record by its id
 
 ## Update a tier under a business account
 
-> **Example Request**
+> **Example Tier body**
 
 ```json
  {
@@ -660,13 +661,13 @@ This endpoint updates a tier under a business account
 
 `PUT`  /enterprise/v1/tiers/{businessId}/{tierId}
 
-### Query Parameters
+### Path Parameters
 
 | Parameter            | Description |
 |----------------------|-------------|
 | `businessId`         | businessId  |
 | *string*, *path*     |             |
-| `tier`               | tier        |
+| `tierId`             | tierId      |
 | *string*, *path*     |             |
 | `tier`               | tier        |
 | *body*               |             |
