@@ -145,16 +145,12 @@ This endpoint updates a customer record under a business account
 
 ```json
   {
-  "body": {
     "customerNum": "7784",
     "email": "KimBlake@centme.com",
     "firstName": "Kim",
     "id": "d17ecab2-8a63-11bn-a8a3-8942ac120002",
     "lastName": "Blake",
     "phoneNo": "0552740129"
-  },
-  "statusCode": "200 OK",
-  "statusCodeValue": 0
   }
 
 ```
