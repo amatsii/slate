@@ -144,7 +144,7 @@ This endpoint updates a customer record under a business account
 
 ## Find customer record by its id
 
->**Example Response**
+>**Example Customer body**
 
 ```json
   {
@@ -580,7 +580,7 @@ This endpoint finds all subscriptions for a customer by customerId
     "deductions": 0,
     "graceDays": 0,
     "id": "5271cc42-8a73-11ec-a8a3-0242ac120002",
-    "name": "John H. Thomas",
+    "name": "Basic",
     "policy": "TIER",
     "reminderDays": 2
   }
@@ -616,7 +616,7 @@ This endpoint creates a tier under a business account
 
 ## Get a tier record by its id
 
-> **Example Response**
+>**Example Tier body**
 
 ```json
   {
@@ -625,7 +625,7 @@ This endpoint creates a tier under a business account
     "deductions": 0,
     "graceDays": 0,
     "id": "576f3640-90a3-11ec-b909-0242ac120002",
-    "name": "David J. Brown",
+    "name": "Special Packages",
     "policy": "TIER",
     "reminderDays": 2
   }
@@ -668,7 +668,7 @@ This endpoint gets a tier record by its id
     "description": "Enjoy new additional services",
     "graceDays": 0,
     "id": "6325a978-8a73-11ec-a8a3-0242ac120002",
-    "name": "Jacqueline M. Abbot",
+    "name": "Premium",
     "policy": "TIER",
     "reminderDays": 2
   }
