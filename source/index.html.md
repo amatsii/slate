@@ -57,7 +57,9 @@ Any further API call now needs to include the access token in the `Authorization
 # Customers
 
 ## Create a customer record under a business account
-> **Example Request**
+
+
+
 ```json
  {
     "customerNum" : "4515",
@@ -140,7 +142,7 @@ This endpoint updates a customer record under a business account
 
 ## Find customer record by its id
 
->**Example Response**
+
 ```json
   {
   "body": {
@@ -602,6 +604,8 @@ This endpoint creates a tier under a business account
 
 ## Get a tier record by it's id
 
+>**Example tier body**
+
 ```json
   {
     "amount": 35800,
@@ -609,7 +613,7 @@ This endpoint creates a tier under a business account
     "deductions": 0,
     "graceDays": 0,
     "id": "576f3640-90a3-11ec-b909-0242ac120002",
-    "name": "David J. Brown",
+    "name": "Special Packages",
     "policy": "TIER",
     "reminderDays": 2
   }
