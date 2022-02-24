@@ -222,44 +222,6 @@ This endpoint creates a subscription record under a business account
 
 ## Find a subscription under a business account by id 
 
-> **Example Subscription response**
-
-```json
-  {
-    "amount" : 20000,
-    "cancelledOn" : "2017-09-30T09:08:01.095-08:00",
-    "customerId" : "d03e4562-8a8b-11ec-a8a3-0242ac120462",
-    "id" : "b7867d4c-8a72-11ec-a5e3-0242fc121842",
-    "lastBilledOn" : "2017-07-30T09:09:21.108-02:09",
-    "nextBillingDate" : "2017-10-30T09:10:00.118-09:10",
-    "pausedOn" : "2017-06-18'T'12:12:33.102-04:08",
-    "receipts" : [
-      {
-        "amount" :  15000,
-        "receivedAt": "2018-06-19'T'10:12:38.105-04:01",
-        "subscriptionId" : "v6c633ca-8a8b-18ec-a8a3-0242ac120002"
-      }
-    ],
-    "scheduleResets" : true,
-    "schedules": [
-      {
-        "amount":18500 ,
-        "graceDate": "2017-12-13",
-        "id": "10d45a7a-8a73-11ec-a8a3-0242ac120002",
-        "reminderDate": "2018-01-01",
-        "scheduledFor": "2018-02-01",
-        "shortenedUrl": "https://test.jpg-online.com/connect/processing?storename=115512500&oid=VT-83be410a-6aba-449c-paymentUrlId=d32rceubeff-ca74-00388n8839d",
-        "status": "AVAILABLE",
-        "subscriptionId": "056838f0-8a8c-11ec-a8a3-0242ac120002"
-      }
-    ],
-    "startDate": "2018-02-30",
-    "status": "ACTIVE",
-    "tierId": "657b9048-7v9a-11ec-a8a3-0242ac120012"
-  }
-```
-
-
 This endpoint finds a subscription record under a business account by id
 
 ### HTTP Request
@@ -589,6 +551,15 @@ This endpoint creates a tier under a business account
 | *string*, *path*     |             |
 | `tier`               | tier        |
 | *body*               |             |
+
+### Details on Tier policy types
+
+| Policy Type    | Description                                                                                                                                    |
+|----------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+|`TIER`          | This deduction policy means the amount to deduct is fixed for every customer. This is the default                                              |
+|`SUBSCRIPTION`  | This deduction policy means the amount to deduct is defined at the time of creating a subscription. Example is a fixed life insurance deduction|
+|`SCHEDULE`      | This means the amount to deduct is defined at the time of creating a payment schedule. Example is a loan with different repayments every month.|
+
 
 ### Responses
 
