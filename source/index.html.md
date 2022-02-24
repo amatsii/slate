@@ -65,7 +65,6 @@ Any further API call now needs to include the access token in the `Authorization
     "customerNum" : "4515",
     "email" : "JoeyEGosselin@jourrapide.com",
     "firstName" : "Joey",
-    "id" : "e17ecab2-8a63-11ec-a8a3-0242ac120002",
     "lastName" : "Gosselin",
     "phoneNo" : "0222740128"
   }
@@ -529,7 +528,6 @@ This endpoint finds all subscriptions for a customer by customerId
     "billingPeriod": "ONCE",
     "deductions": 0,
     "graceDays": 0,
-    "id": "5271cc42-8a73-11ec-a8a3-0242ac120002",
     "name": "Basic",
     "policy": "TIER",
     "reminderDays": 2
