@@ -341,11 +341,11 @@ This endpoint pauses a subscription record under a business account
 
 ```json
   {
-    "amount": 93874,
-    "graceDate": "yyyy-MM-dd",
+    "amount": 74,
+    "graceDate": "2020-03-13",
     "id": "6bb42d33-c2a2-4763-90e4-ff1702fc9951",
-    "reminderDate": "yyyy-MM-dd",
-    "scheduledFor": "yyyy-MM-dd",
+    "reminderDate": "2020-03-30",
+    "scheduledFor": "2020-04-01",
     "shortenedUrl": "https://test.jpg-online.com/connect/gateway/processing?storename=110995000&oid=VT-83be410a-6aba-449c-paymentUrlId=d32rceubeff-cdy4-00388n8839d",
     "status": "AVAILABLE",
     "subscriptionId": "3330eb10-8a8c-11ec-a8a3-0242ac120002"
@@ -385,8 +385,8 @@ This endpoint updates a PaymentSchedule record
 
 ```json
   {
-    "amount": 64913,
-    "date": "yyyy-MM-dd",
+    "amount": 64,
+    "date": "2017-07-25",
     "id": "3993cf04-8a73-11ec-a8a3-0242ac120002"
   }
 ```
@@ -456,7 +456,7 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 ```json
   {
-    "amount": 56827,
+    "amount": 27,
     "order": 0
   }
 ```
@@ -524,7 +524,7 @@ This endpoint finds all subscriptions for a customer by customerId
 
 ```json
   {
-    "amount": 102185,
+    "amount": 10,
     "billingPeriod": "ONCE",
     "deductions": 0,
     "graceDays": 0,
@@ -576,7 +576,7 @@ This endpoint creates a tier under a business account
 
 ```json
   {
-    "amount": 35800,
+    "amount": 35,
     "billingPeriod": "ONCE",
     "deductions": 0,
     "graceDays": 0,
@@ -618,7 +618,7 @@ This endpoint gets a tier record by its id
 
 ```json
  {
-    "amount": 832964,
+    "amount": 48,
     "billingPeriod": "ONCE",
     "deductions": 0,
     "description": "Enjoy new additional services",
