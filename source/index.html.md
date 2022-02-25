@@ -186,9 +186,23 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
+### HTTP Request
+
+`POST`  /enterprise/v1/subscriptions/{businessId}
+
+### Path Parameters
+
+| Parameter            | Description |
+|----------------------|-------------|
+| `businessId`         | businessId  |
+| *string*, *path*     |             |
+| `subscription`       | subscription|
+| *body*               |             |
+
+
 ### Subscription policy
 
-> **Example Subscription body with SUBSCRIPTION policy**
+> **Example Subscription body for a tier whose policy value is SUBSCRIPTION**
 
 ```json
 {
@@ -216,7 +230,7 @@ If `startdate` is not specified, billing will start immediately.
 
 ### Tier/Schedule policy
 
-> **Example Subscription body with TIER/SCHEDULE policy**
+> **Example Subscription body for a tier whose policy value is either TIER/SCHEDULE**
 
 ```json
 {
@@ -227,7 +241,7 @@ If `startdate` is not specified, billing will start immediately.
 ```
 
 To create a subscription to a tier with policy type being “TIER” or “SCHEDULE”, the request body requires the `customerId` and `tierId`. 
-If `startdate` is not specified, billing will start immediately. The “startDate” is ignored if the tier has policy type of “SCHEDULE”.
+If `startdate` is not specified, billing will start immediately. The `startDate` is ignored if the tier has policy type of “SCHEDULE”.
 
 
 ### Request body
@@ -238,18 +252,6 @@ If `startdate` is not specified, billing will start immediately. The “startDat
 |`tierId`    | string | Required | tierId            |
 |`startDate` | Date   | Optional | start date        |
 
-### HTTP Request
-
-`POST`  /enterprise/v1/subscriptions/{businessId}
-
-### Path Parameters
-
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `subscription`       | subscription|
-| *body*               |             |
 
 ### Responses
 
