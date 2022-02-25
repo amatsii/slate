@@ -226,8 +226,7 @@ This endpoint creates a subscription record under a business account
 ```json
 {
   "amount": 20,
-  "customerId": "string",
-  "id": "string",
+  "customerId": "97f9a74a-9648-11ec-b909-0242ac120002",
   "lastBilledOn": "2022-01-25T07:36:17Z",
   "nextBillingDate": "2022-02-25T07:36:17Z",
   "receipts": [
@@ -241,7 +240,6 @@ This endpoint creates a subscription record under a business account
     {
       "amount": 20,
       "graceDate": "2022-01-26",
-      "id": "string",
       "reminderDate": "2022-01-23",
       "scheduledFor": "2022-01-25",
       "shortenedUrl": "https://rvkn.app/daba5c3c8433",
@@ -251,7 +249,6 @@ This endpoint creates a subscription record under a business account
     {
       "amount": 20,
       "graceDate": "2022-02-26",
-      "id": "string",
       "reminderDate": "2022-02-23",
       "scheduledFor": "2022-02-25",
       "shortenedUrl": "https://rvkn.app/83fe46e6",
@@ -393,7 +390,7 @@ This endpoint pauses a subscription record under a business account
     "id": "6bb42d33-c2a2-4763-90e4-ff1702fc9951",
     "reminderDate": "2020-03-30",
     "scheduledFor": "2020-04-01",
-    "shortenedUrl": "https://test.jpg-online.com/connect/gateway/processing?storename=110995000&oid=VT-83be410a-6aba-449c-paymentUrlId=d32rceubeff-cdy4-00388n8839d",
+    "shortenedUrl": "https://rvkn.app/3330eb10",
     "status": "AVAILABLE",
     "subscriptionId": "3330eb10-8a8c-11ec-a8a3-0242ac120002"
   }
