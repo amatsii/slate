@@ -186,13 +186,53 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
-> **Example Subscription body**
+> **Example Subscription body with SUBSCRIPTION policy**
 
 ```json
-
+{
+  "customerId": "9e0fb8d9-f7bf-4db0-931b-3e5a04b49c68",
+  "tierId": "2fb2a2d4-2454-4a06-8b4b-6fd7c74dd7dc",
+  "amount": 20,
+  "startDate": "2022-02-25"
+}
 ```
 
-This endpoint creates a subscription record under a business account
+This endpoint creates a subscription record under a business account.
+To create a subscription to a tier with policy type being “SUBSCRIPTION”, 
+the request body requires the `customerId`, `tierId` and `amount`. 
+If `startdate` is not specified, billing will start immediately.
+
+### Request body
+
+|Parameter   | Type   | Required | Description       |
+|------------|--------|----------|-------------------|
+|`customerId`| string | Required | customerId        |
+|`tierId`    | string | Required | tierId            |
+|`amount`    | double | Required | amount of payment |
+|`startDate` | Date   | Optional | start date        |
+
+> **Example Subscription body with TIER/SCHEDULE policy**
+
+```json
+{
+  "customerId": "9e0fb8d9-f7bf-4db0-931b-3e5a04b49c68",
+  "tierId": "2fb2a2d4-2454-4a06-8b4b-6fd7c74dd7dc",
+  "startDate": "2022-02-25"
+}
+```
+
+This endpoint creates a subscription record under a business account.
+To create a subscription to a tier with policy type being “TIER” or “SCHEDULE”, the request body requires the `customerId` and `tierId`. 
+If `startdate` is not specified, billing will start immediately. The “startDate” is ignored if the tier has policy type of “SCHEDULE”.
+
+
+### Request body
+
+|Parameter   | Type   | Required | Description       |
+|------------|--------|----------|-------------------|
+|`customerId`| string | Required | customerId        |
+|`tierId`    | string | Required | tierId            |
+|`startDate` | Date   | Optional | start date        |
 
 ### HTTP Request
 
