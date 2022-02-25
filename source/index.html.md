@@ -221,6 +221,53 @@ This endpoint creates a subscription record under a business account
 
 ## Find a subscription under a business account by id 
 
+> **Example Subscription response**
+
+```json
+{
+  "amount": 20,
+  "customerId": "string",
+  "id": "string",
+  "lastBilledOn": "2022-01-25T07:36:17Z",
+  "nextBillingDate": "2022-02-25T07:36:17Z",
+  "receipts": [
+    {
+      "amount": 20,
+      "receivedAt": "2022-01-25T07:36:17Z",
+	  "subscriptionId": "83fe46e6-445d-4137-b255-daba5c3c8433"
+    }
+  ],
+  "schedules": [
+    {
+      "amount": 20,
+      "graceDate": "2022-01-26",
+      "id": "string",
+      "reminderDate": "2022-01-23",
+      "scheduledFor": "2022-01-25",
+      "shortenedUrl": "https://rvkn.app/daba5c3c8433",
+      "status": "COMPLETED",
+      "subscriptionId": "83fe46e6-445d-4137-b255-daba5c3c8433"
+    },
+    {
+      "amount": 20,
+      "graceDate": "2022-02-26",
+      "id": "string",
+      "reminderDate": "2022-02-23",
+      "scheduledFor": "2022-02-25",
+      "shortenedUrl": "https://rvkn.app/83fe46e6",
+      "status": "PENDING",
+      "subscriptionId": "83fe46e6-445d-4137-b255-daba5c3c8433"
+    }
+  ],
+  "startDate": "2022-01-25",
+  "status": "ACTIVE",
+  "tierId": "1b744e0a-8495-4a7d-ba7b-08e330b2ef6f",
+  "id": "83fe46e6-445d-4137-b255-daba5c3c8433"
+}
+
+```
+
+
 This endpoint finds a subscription record under a business account by id
 
 ### HTTP Request
