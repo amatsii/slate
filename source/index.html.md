@@ -186,6 +186,8 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
+### Subscription policy
+
 > **Example Subscription body with SUBSCRIPTION policy**
 
 ```json
@@ -211,6 +213,9 @@ If `startdate` is not specified, billing will start immediately.
 |`amount`    | double | Required | amount of payment |
 |`startDate` | Date   | Optional | start date        |
 
+
+### Tier/Schedule policy
+
 > **Example Subscription body with TIER/SCHEDULE policy**
 
 ```json
@@ -221,7 +226,6 @@ If `startdate` is not specified, billing will start immediately.
 }
 ```
 
-This endpoint creates a subscription record under a business account.
 To create a subscription to a tier with policy type being “TIER” or “SCHEDULE”, the request body requires the `customerId` and `tierId`. 
 If `startdate` is not specified, billing will start immediately. The “startDate” is ignored if the tier has policy type of “SCHEDULE”.
 
