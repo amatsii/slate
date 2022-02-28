@@ -202,7 +202,7 @@ This endpoint finds  customer record by its id
 
 ### Subscription policy
 
-> **Example Subscription body for a tier whose policy value is SUBSCRIPTION**
+> Example Subscription body for a tier whose policy value is **SUBSCRIPTION**
 
 ```json
 {
@@ -230,7 +230,7 @@ If `startdate` is not specified, billing will start immediately.
 
 ### Tier/Schedule policy
 
-> **Example Subscription body for a tier whose policy value is either TIER/SCHEDULE**
+> Example Subscription body for a tier whose policy value is either **TIER**/**SCHEDULE**
 
 ```json
 {
