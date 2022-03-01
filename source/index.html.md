@@ -58,6 +58,8 @@ Any further API call now needs to include the access token in the `Authorization
 
 ## Create a customer record under a business account
 
+This endpoint creates a customer record under a business account
+
 > **Example Customer body**
 
 ```json
@@ -98,6 +100,9 @@ Any further API call now needs to include the access token in the `Authorization
 
 ## Update a Customer record under a business account
 
+This endpoint updates a customer record under a business account
+
+
 > **Example Customer body**
 
 ```json
@@ -136,6 +141,9 @@ Any further API call now needs to include the access token in the `Authorization
 | 404  | Invalid businessId supplied                         |
 
 ## Find customer record by its id
+
+This endpoint finds  customer record by its id
+
 
 >**Example Customer response**
 
@@ -179,6 +187,8 @@ Any further API call now needs to include the access token in the `Authorization
 
 
 ## Create a subscription record under a business account
+
+This endpoint creates a subscription record under a business account.
 
 ### HTTP Request
 
@@ -260,6 +270,9 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Find a subscription under a business account by id 
 
+This endpoint finds a subscription record under a business account by id
+
+
 > **Example Subscription response**
 
 ```json
@@ -329,6 +342,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Find a scheduled payment under a business account by id
 
+This endpoint finds a scheduled payment under a business account by id 
+
 ### HTTP Request
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/{scheduleId}
@@ -357,6 +372,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Cancel a subscription
 
+This endpoint cancels a subscription record under a business account by id
+
 ### HTTP Request
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/cancel
@@ -384,6 +401,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Pause a subscription
 
+This endpoint pauses a subscription record under a business account 
+
 ### HTTP Request
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/pause
@@ -410,6 +429,9 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 
 ## Update a PaymentSchedule record
+
+This endpoint updates a PaymentSchedule record
+
 
 > **Example PaymentSchedule body**
 
@@ -454,6 +476,9 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Resend SMS notification of payment 
 
+This endpoint resends SMS notification of payment
+
+
 > **Example notification of payment**
 
 ```json
@@ -493,6 +518,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Schedule payments for this subscription using the dates and amounts specified in the body 
 
+This endpoint schedule payments for this subscription using the dates and amounts specified in the body
+
 ### HTTP Request
 
 `POST`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule/date
@@ -520,6 +547,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 | 404  | Invalid businessId supplied                    |
 
 ## Schedule payments for this subscription using the order and amounts specified in the body
+
+This endpoint schedule payments for this subscription using the order and amounts specified in the body
 
 > **Example request**
 
@@ -558,6 +587,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Find all subscriptions for a customer by customerId
 
+This endpoint finds all subscriptions for a customer by customerId
+
 ### HTTP Request
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/customer/{customerId}
@@ -583,6 +614,9 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 # Tiers
 
 ## Create a tier under a business account
+
+This endpoint creates a tier under a business account
+
 
 > **Example Tier body**
 
@@ -633,6 +667,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ## Get a tier record by its id
 
+This endpoint gets a tier record by its id
+
 >**Example Tier response**
 
 ```json
@@ -671,6 +707,8 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 | 404  | Invalid businessId or tierId supplied     |
 
 ## Update a tier under a business account
+
+This endpoint updates a tier under a business account
 
 > **Example Tier body**
 
