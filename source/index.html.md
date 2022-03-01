@@ -70,8 +70,6 @@ Any further API call now needs to include the access token in the `Authorization
   }
 ```
 
-This endpoint creates a customer record under a business account
-
 ### HTTP Request
 
 `POST`  /enterprise/v1/customers/{businessId}
@@ -113,8 +111,6 @@ This endpoint creates a customer record under a business account
   }
 ```
 
-This endpoint updates a customer record under a business account
-
 ### HTTP Request
 
 `PUT`  /enterprise/v1/customers/{businessId}
@@ -154,8 +150,6 @@ This endpoint updates a customer record under a business account
   }
 
 ```
-
-This endpoint finds  customer record by its id 
 
 ### HTTP Request
 
@@ -213,7 +207,6 @@ This endpoint finds  customer record by its id
 }
 ```
 
-This endpoint creates a subscription record under a business account.
 To create a subscription to a tier with policy type being **SUBSCRIPTION**, 
 the request body requires the `customerId`, `tierId` and `amount`. 
 If `startdate` is not specified, billing will start immediately.
@@ -310,9 +303,6 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ```
 
-
-This endpoint finds a subscription record under a business account by id
-
 ### HTTP Request
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}
@@ -338,8 +328,6 @@ This endpoint finds a subscription record under a business account by id
 
 
 ## Find a scheduled payment under a business account by id
-
-This endpoint finds a scheduled payment under a business account by id 
 
 ### HTTP Request
 
@@ -369,8 +357,6 @@ This endpoint finds a scheduled payment under a business account by id
 
 ## Cancel a subscription
 
-This endpoint cancels a subscription record under a business account by id
-
 ### HTTP Request
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/cancel
@@ -397,8 +383,6 @@ This endpoint cancels a subscription record under a business account by id
 
 
 ## Pause a subscription
-
-This endpoint pauses a subscription record under a business account 
 
 ### HTTP Request
 
@@ -442,7 +426,6 @@ This endpoint pauses a subscription record under a business account
   }
 ```
 
-This endpoint updates a PaymentSchedule record
 ### HTTP Request
 
 `PUT`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
@@ -481,8 +464,6 @@ This endpoint updates a PaymentSchedule record
   }
 ```
 
-This endpoint resends SMS notification of payment 
-
 ### HTTP Request
 
 `PATCH`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
@@ -511,8 +492,6 @@ This endpoint resends SMS notification of payment
 
 
 ## Schedule payments for this subscription using the dates and amounts specified in the body 
-
-This endpoint schedule payments for this subscription using the dates and amounts specified in the body
 
 ### HTTP Request
 
@@ -551,9 +530,6 @@ This endpoint schedule payments for this subscription using the dates and amount
   }
 ```
 
-This endpoint schedule payments for this subscription using the order and amounts specified in the body
-
-
 ### HTTP Request
 
 `POST`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule/order
@@ -581,8 +557,6 @@ This endpoint schedule payments for this subscription using the order and amount
 | 404  | Invalid businessId or subscriptionId supplied           |
 
 ## Find all subscriptions for a customer by customerId
-
-This endpoint finds all subscriptions for a customer by customerId
 
 ### HTTP Request
 
@@ -623,9 +597,6 @@ This endpoint finds all subscriptions for a customer by customerId
     "reminderDays": 2
   }
 ```
-
-This endpoint creates a tier under a business account
-
 
 ### HTTP Request
 
@@ -677,9 +648,6 @@ This endpoint creates a tier under a business account
   }
 ```
 
-
-This endpoint gets a tier record by its id
-
 ### HTTP Request
 
 `GET` /enterprise/v1/tiers/{businessId}/{tierId}
@@ -720,9 +688,6 @@ This endpoint gets a tier record by its id
   }
 
 ```
-
-This endpoint updates a tier under a business account
-
 
 ### HTTP Request
 
