@@ -188,7 +188,31 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
-This endpoint creates a subscription record under a business account.
+This endpoint creates a new subscription record under a business account.
+
+> **Example Subscription response for creating a new subscription**
+
+```json
+{
+  "id": "83fe46e6-445d-4137-b255-daba5c3c8433",
+  "amount": 20,
+  "customerId": "97f9a74a-9648-11ec-b909-0242ac120002",
+  "nextBillingDate": "2022-02-25T07:36:17Z",
+  "schedules": [
+    {
+      "amount": 20,
+      "graceDate": "2022-02-26",
+      "reminderDate": "2022-02-23",
+      "scheduledFor": "2022-02-25",
+      "shortenedUrl": "https://rvkn.app/83fe46e6",
+      "status": "PENDING"
+    }
+  ],
+  "startDate": "2022-01-25",
+  "status": "ACTIVE",
+  "tierId": "1b744e0a-8495-4a7d-ba7b-08e330b2ef6f"
+}
+```
 
 ### HTTP Request
 
