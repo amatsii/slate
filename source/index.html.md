@@ -58,6 +58,8 @@ Any further API call now needs to include the access token in the `Authorization
 
 ## Create a customer record under a business account
 
+This endpoint creates a customer record under a business account
+
 > **Example Customer body**
 
 ```json
@@ -69,8 +71,6 @@ Any further API call now needs to include the access token in the `Authorization
     "phoneNo" : "0222740128"
   }
 ```
-
-This endpoint creates a customer record under a business account
 
 ### HTTP Request
 
@@ -100,6 +100,9 @@ This endpoint creates a customer record under a business account
 
 ## Update a Customer record under a business account
 
+This endpoint updates a customer record under a business account
+
+
 > **Example Customer body**
 
 ```json
@@ -112,8 +115,6 @@ This endpoint creates a customer record under a business account
     "phoneNo" : "0515872451"
   }
 ```
-
-This endpoint updates a customer record under a business account
 
 ### HTTP Request
 
@@ -141,6 +142,9 @@ This endpoint updates a customer record under a business account
 
 ## Find customer record by its id
 
+This endpoint finds  customer record by its id
+
+
 >**Example Customer response**
 
 ```json
@@ -154,8 +158,6 @@ This endpoint updates a customer record under a business account
   }
 
 ```
-
-This endpoint finds  customer record by its id 
 
 ### HTTP Request
 
@@ -186,13 +188,31 @@ This endpoint finds  customer record by its id
 
 ## Create a subscription record under a business account
 
-> **Example Subscription body**
+This endpoint creates a new subscription record under a business account.
+
+> **Example Subscription response for creating a new subscription**
 
 ```json
-
+{
+  "id": "83fe46e6-445d-4137-b255-daba5c3c8433",
+  "amount": 20,
+  "customerId": "97f9a74a-9648-11ec-b909-0242ac120002",
+  "nextBillingDate": "2022-02-25T07:36:17Z",
+  "schedules": [
+    {
+      "amount": 20,
+      "graceDate": "2022-02-26",
+      "reminderDate": "2022-02-23",
+      "scheduledFor": "2022-02-25",
+      "shortenedUrl": "https://rvkn.app/83fe46e6",
+      "status": "PENDING"
+    }
+  ],
+  "startDate": "2022-01-25",
+  "status": "ACTIVE",
+  "tierId": "1b744e0a-8495-4a7d-ba7b-08e330b2ef6f"
+}
 ```
-
-This endpoint creates a subscription record under a business account
 
 ### HTTP Request
 
@@ -207,6 +227,59 @@ This endpoint creates a subscription record under a business account
 | `subscription`       | subscription|
 | *body*               |             |
 
+
+### Subscription policy
+
+> Example Subscription body for a tier whose policy value is **SUBSCRIPTION**
+
+```json
+{
+  "customerId": "9e0fb8d9-f7bf-4db0-931b-3e5a04b49c68",
+  "tierId": "2fb2a2d4-2454-4a06-8b4b-6fd7c74dd7dc",
+  "amount": 20,
+  "startDate": "2022-02-25"
+}
+```
+
+To create a subscription to a tier with policy type being **SUBSCRIPTION**, 
+the request body requires the `customerId`, `tierId` and `amount`. 
+If `startdate` is not specified, billing will start immediately.
+
+### Request body
+
+|Parameter   | Type   | Required | Description       |
+|------------|--------|----------|-------------------|
+|`customerId`| string | Required | customerId        |
+|`tierId`    | string | Required | tierId            |
+|`amount`    | double | Required | amount of payment |
+|`startDate` | Date   | Optional | start date        |
+
+
+### Tier/Schedule policy
+
+> Example Subscription body for a tier whose policy value is either **TIER**/**SCHEDULE**
+
+```json
+{
+  "customerId": "9e0fb8d9-f7bf-4db0-931b-3e5a04b49c68",
+  "tierId": "2fb2a2d4-2454-4a06-8b4b-6fd7c74dd7dc",
+  "startDate": "2022-02-25"
+}
+```
+
+To create a subscription to a tier with policy type being **TIER** or **SCHEDULE**, the request body requires the `customerId` and `tierId`. 
+If `startdate` is not specified, billing will start immediately. The `startDate` is ignored if the tier has policy type of **SCHEDULE**.
+
+
+### Request body
+
+|Parameter   | Type   | Required | Description       |
+|------------|--------|----------|-------------------|
+|`customerId`| string | Required | customerId        |
+|`tierId`    | string | Required | tierId            |
+|`startDate` | Date   | Optional | start date        |
+
+
 ### Responses
 
 | Code | Description                                    |
@@ -220,6 +293,9 @@ This endpoint creates a subscription record under a business account
 
 
 ## Find a subscription under a business account by id 
+
+This endpoint finds a subscription record under a business account by id
+
 
 > **Example Subscription response**
 
@@ -263,9 +339,6 @@ This endpoint creates a subscription record under a business account
 }
 
 ```
-
-
-This endpoint finds a subscription record under a business account by id
 
 ### HTTP Request
 
@@ -381,6 +454,9 @@ This endpoint pauses a subscription record under a business account
 
 ## Update a PaymentSchedule record
 
+This endpoint updates a PaymentSchedule record
+
+
 > **Example PaymentSchedule body**
 
 ```json
@@ -396,7 +472,6 @@ This endpoint pauses a subscription record under a business account
   }
 ```
 
-This endpoint updates a PaymentSchedule record
 ### HTTP Request
 
 `PUT`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
@@ -425,6 +500,9 @@ This endpoint updates a PaymentSchedule record
 
 ## Resend SMS notification of payment 
 
+This endpoint resends SMS notification of payment
+
+
 > **Example notification of payment**
 
 ```json
@@ -434,8 +512,6 @@ This endpoint updates a PaymentSchedule record
     "id": "3993cf04-8a73-11ec-a8a3-0242ac120002"
   }
 ```
-
-This endpoint resends SMS notification of payment 
 
 ### HTTP Request
 
@@ -496,6 +572,8 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 ## Schedule payments for this subscription using the order and amounts specified in the body
 
+This endpoint schedule payments for this subscription using the order and amounts specified in the body
+
 > **Example request**
 
 ```json
@@ -504,9 +582,6 @@ This endpoint schedule payments for this subscription using the dates and amount
     "order": 0
   }
 ```
-
-This endpoint schedule payments for this subscription using the order and amounts specified in the body
-
 
 ### HTTP Request
 
@@ -564,6 +639,9 @@ This endpoint finds all subscriptions for a customer by customerId
 
 ## Create a tier under a business account
 
+This endpoint creates a tier under a business account
+
+
 > **Example Tier body**
 
 ```json
@@ -577,9 +655,6 @@ This endpoint finds all subscriptions for a customer by customerId
     "reminderDays": 2
   }
 ```
-
-This endpoint creates a tier under a business account
-
 
 ### HTTP Request
 
@@ -616,6 +691,8 @@ This endpoint creates a tier under a business account
 
 ## Get a tier record by its id
 
+This endpoint gets a tier record by its id
+
 >**Example Tier response**
 
 ```json
@@ -630,9 +707,6 @@ This endpoint creates a tier under a business account
     "reminderDays": 2
   }
 ```
-
-
-This endpoint gets a tier record by its id
 
 ### HTTP Request
 
@@ -658,6 +732,8 @@ This endpoint gets a tier record by its id
 
 ## Update a tier under a business account
 
+This endpoint updates a tier under a business account
+
 > **Example Tier body**
 
 ```json
@@ -674,9 +750,6 @@ This endpoint gets a tier record by its id
   }
 
 ```
-
-This endpoint updates a tier under a business account
-
 
 ### HTTP Request
 
