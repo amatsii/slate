@@ -78,12 +78,12 @@ This endpoint creates a customer record under a business account
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `customer`           | customer    |
-| *body*               |             |
+| Parameter            | Description                             |
+|----------------------|-----------------------------------------|
+| `businessId`         | The unique account key of the business  |
+| *string*, *path*     |                                         |
+| `customer`           | The customer of the business            |
+| *body*               |                                         |
 
 ### Responses
 
@@ -122,12 +122,12 @@ This endpoint updates a customer record under a business account
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `customer`           | customer    |
-| *body*               |             |
+| Parameter            | Description                             |
+|----------------------|-----------------------------------------|
+| `businessId`         | The unique account key of the business  |
+| *string*, *path*     |                                         |
+| `customer`           | The customer of the business            |
+| *body*               |                                         |
 
 ### Responses
 
@@ -165,12 +165,12 @@ This endpoint finds  customer record by its id
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `customerId`         | customerId  |
-| *string*, *path*     |             |
+| Parameter            | Description                             |
+|----------------------|-----------------------------------------|
+| `businessId`         | The unique account key of the business  |
+| *string*, *path*     |                                         |
+| `customerId`         | The unique identifier of the customer   |
+| *string*, *path*     |                                         |
 
 ### Responses
 
@@ -220,12 +220,12 @@ This endpoint creates a new subscription record under a business account.
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `subscription`       | subscription|
-| *body*               |             |
+| Parameter            | Description                                 |
+|----------------------|---------------------------------------------|
+| `businessId`         | The unique account key of the business      |
+| *string*, *path*     |                                             |
+| `subscription`       | Details of subscription from the customer   |
+| *body*               |                                             |
 
 
 ### Subscription policy
@@ -247,12 +247,12 @@ If `startdate` is not specified, billing will start immediately.
 
 ### Request body
 
-|Parameter   | Type   | Required | Description       |
-|------------|--------|----------|-------------------|
-|`customerId`| string | Required | customerId        |
-|`tierId`    | string | Required | tierId            |
-|`amount`    | double | Required | amount of payment |
-|`startDate` | Date   | Optional | start date        |
+|Parameter   | Type   | Required | Description                                                  |
+|------------|--------|----------|--------------------------------------------------------------|
+|`customerId`| string | Required | Unique identifier of the customer who owns the subscription  |
+|`tierId`    | string | Required | The id of the tier                                           |
+|`amount`    | double | Required | Amount of payment                                            |
+|`startDate` | Date   | Optional | The date the subscription started                            |
 
 
 ### Tier/Schedule policy
@@ -273,11 +273,11 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ### Request body
 
-|Parameter   | Type   | Required | Description       |
-|------------|--------|----------|-------------------|
-|`customerId`| string | Required | customerId        |
-|`tierId`    | string | Required | tierId            |
-|`startDate` | Date   | Optional | start date        |
+|Parameter   | Type   | Required | Description                                                  |
+|------------|--------|----------|--------------------------------------------------------------|
+|`customerId`| string | Required |  Unique identifier of the customer who owns the subscription |
+|`tierId`    | string | Required |  The id of the tier                                          |
+|`startDate` | Date   | Optional |  The date the subscription started                           |
 
 
 ### Responses
@@ -346,12 +346,12 @@ This endpoint finds a subscription record under a business account by id
 
 ### Path Parameters
 
-| Parameter            | Description   |
-|----------------------|---------------|
-| `businessId`         | businessId    |
-| *string*, *path*     |               |
-| `subscriptionId`     | subscriptionId|
-| *string*, *path*     |               |
+| Parameter            | Description                           |
+|----------------------|---------------------------------------|
+| `businessId`         | Unique account key of the business    |
+| *string*, *path*     |                                       |
+| `subscriptionId`     | The id of the subscription            |
+| *string*, *path*     |                                       |
 
 ### Responses
 
@@ -389,14 +389,14 @@ This endpoint finds a scheduled payment under a business account by id
 
 ### Path Parameters
 
-| Parameter               | Description         |
-|-------------------------|---------------------|
-| `businessId`            | businessId          |
-|  *string*, *path*       |                     |
-| `subscriptionId`        | subscriptionId      |
-|  *string*, *path*       |                     |
-| `scheduledId`           | scheduleId          |
-|  *string*, *path*       |                     |
+| Parameter               | Description                                                                       |
+|-------------------------|-----------------------------------------------------------------------------------|
+| `businessId`            | Unique account key of the business                                                |
+|  *string*, *path*       |                                                                                   |
+| `subscriptionId`        | The id of the subscription                                                        |
+|  *string*, *path*       |                                                                                   |
+| `scheduledId`           | The id of the schedule that allows you to manage the lifecycle of the subscription|                               
+|  *string*, *path*       |                                                                                   |
 
 ### Responses
 
@@ -419,12 +419,12 @@ This endpoint cancels a subscription record under a business account by id
 
 ### Path Parameters
 
-| Parameter            | Description   |
-|----------------------|---------------|
-| `businessId`         | businessId    |
-| *string*, *path*     |               |
-| `subscriptionId`     | subscriptionId|
-| *string*, *path*     |               |
+| Parameter            | Description                        |
+|----------------------|------------------------------------|
+| `businessId`         | Unique account key of the business |
+| *string*, *path*     |                                    |
+| `subscriptionId`     | The id of the subscription         |
+| *string*, *path*     |                                    |
 
 ### Responses
 
@@ -448,12 +448,12 @@ This endpoint pauses a subscription record under a business account
 
 ### Path Parameters
 
-| Parameter            | Description   |
-|----------------------|---------------|
-| `businessId`         | businessId    |
-| *string*, *path*     |               |
-| `subscriptionId`     | subscriptionId|
-| *string*, *path*     |               |
+| Parameter            | Description                           |
+|----------------------|---------------------------------------|
+| `businessId`         | Unique account key of the business    |
+| *string*, *path*     |                                       |
+| `subscriptionId`     | The id of the subscription            |
+| *string*, *path*     |                                       |
 
 ### Responses
 
@@ -493,14 +493,14 @@ This endpoint updates a PaymentSchedule record
 
 ### Path Parameters
 
-| Parameter            | Description      |
-|----------------------|------------------|
-| `businessId`         | businessId       |
-|  *string*, *path*    |                  |
-| `subscriptionId`     | subscriptionId   |
-|  *string*, *path*    |                  |
-| `updateRequestDto`   | updateRequestDto |
-|  *body*              |                  |
+| Parameter            | Description                         |
+|----------------------|-------------------------------------|
+| `businessId`         | Unique account key of the business  |
+|  *string*, *path*    |                                     |
+| `subscriptionId`     | The id of the subscription          |
+|  *string*, *path*    |                                     |
+| `updateRequestDto`   | updateRequestDto                    |
+|  *body*              |                                     |
 
 ### Responses
 
@@ -534,12 +534,12 @@ This endpoint resends SMS notification of payment
 
 ### Path Parameters
 
-| Parameter            | Description   |
-|----------------------|---------------|
-| `businessId`         | businessId    |
-| *string*, *path*     |               |
-| `subscriptionId`     | subscriptionId|
-| *string*, *path*     |               |
+| Parameter            | Description                         |
+|----------------------|-------------------------------------|
+| `businessId`         | Unique account key of the business  |
+| *string*, *path*     |                                     |
+| `subscriptionId`     | The id of the subscription          |
+| *string*, *path*     |                                     |
 
 
 ### Responses
@@ -565,14 +565,14 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 ### Path Parameters
 
-| Parameter            | Description      |
-|----------------------|------------------|
-| `businessId`         | businessId       |
-|  *string*, *path*    |                  |
-| `subscriptionId`     | subscriptionId   |
-|  *string*, *path*    |                  |
-| `payments`           | payments         |
-|  *body*              |                  |
+| Parameter            | Description                                              |
+|----------------------|----------------------------------------------------------|
+| `businessId`         | Unique account key of the business                       |
+|  *string*, *path*    |                                                          |
+| `subscriptionId`     | The id of the subscription                               |
+|  *string*, *path*    |                                                          |
+| `payments`           | The payments made by the customer for the subscription   |
+|  *body*              |                                                          |
 
 ### Responses
 
@@ -604,14 +604,14 @@ This endpoint schedule payments for this subscription using the order and amount
 
 ### Path Parameters
 
-| Parameter            | Description      |
-|----------------------|------------------|
-| `businessId`         | businessId       |
-|  *string*, *path*    |                  |
-| `subscriptionId`     | subscriptionId   |
-|  *string*, *path*    |                  |
-| `payments`           | payments         |
-|  *body*              |                  |
+| Parameter            | Description                                             |
+|----------------------|---------------------------------------------------------|
+| `businessId`         | Unique account key of the business                      |
+|  *string*, *path*    |                                                         |
+| `subscriptionId`     | The id of the subscription                              |
+|  *string*, *path*    |                                                         |
+| `payments`           | The payments made by the customer for the subscription  |
+|  *body*              |                                                         |
 
 ### Responses
 
@@ -634,12 +634,12 @@ This endpoint finds all subscriptions for a customer by customerId
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `customerId`         | customerId  |
-| *string*, *path*     |             |
+| Parameter            | Description                                                      |
+|----------------------|------------------------------------------------------------------|
+| `businessId`         | Unique account key of the business                               |
+| *string*, *path*     |                                                                  |
+| `customerId`         | The unique identifier of the customer who owns the subscription  |
+| *string*, *path*     |                                                                  |
 
 ### Responses
 
@@ -677,12 +677,12 @@ This endpoint creates a tier under a business account
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `tier`               | tier        |
-| *body*               |             |
+| Parameter            | Description                                       |
+|----------------------|---------------------------------------------------|
+| `businessId`         | Unique account key of the business                |
+| *string*, *path*     |                                                   |
+| `tier`               | Details of individual payment plans for customers |
+| *body*               |                                                   |
 
 ### Details on Tier policy types
 
@@ -729,12 +729,12 @@ This endpoint gets a tier record by its id
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `tierId`             | tierId      |
-| *string*, *path*     |             |
+| Parameter            | Description                         |
+|----------------------|-------------------------------------|
+| `businessId`         | Unique account key of the business  |
+| *string*, *path*     |                                     |
+| `tierId`             | The id of the tier                  |
+| *string*, *path*     |                                     |
 
 ### Responses
 
@@ -772,14 +772,14 @@ This endpoint updates a tier under a business account
 
 ### Path Parameters
 
-| Parameter            | Description |
-|----------------------|-------------|
-| `businessId`         | businessId  |
-| *string*, *path*     |             |
-| `tierId`             | tierId      |
-| *string*, *path*     |             |
-| `tier`               | tier        |
-| *body*               |             |
+| Parameter            | Description                                       |
+|----------------------|---------------------------------------------------|
+| `businessId`         | Unique account key of the business                |
+| *string*, *path*     |                                                   |
+| `tierId`             | The id of the tier                                |
+| *string*, *path*     |                                                   |
+| `tier`               | Details of individual payment plans for customers |
+| *body*               |                                                   |
 
 ### Responses
 
