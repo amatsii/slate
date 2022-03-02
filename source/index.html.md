@@ -368,6 +368,21 @@ This endpoint finds a subscription record under a business account by id
 
 This endpoint finds a scheduled payment under a business account by id 
 
+> **Example scheduled payment response**
+
+```json
+{
+  "id": "951a9cb4-9a26-11ec-b909-0242ac120002",
+  "subscriptionId": "a0436d32-9a26-11ec-b909-e08a7c183209",
+  "scheduledFor": "2022-03-27",
+  "reminderDate": "2022-03-26",
+  "graceDate": "2022-03-28",
+  "amount": "50",
+  "status": "SUSPENDED",
+  "shortenedUrl": "https://rvkn.app/e08a7c183209"
+}
+```
+
 ### HTTP Request
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/{scheduleId}
