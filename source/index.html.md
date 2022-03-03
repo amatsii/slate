@@ -475,16 +475,16 @@ This endpoint updates a PaymentSchedule record
 > **Example PaymentSchedule body**
 
 ```json
-  {
-    "amount": 74,
-    "graceDate": "2020-03-13",
-    "id": "6bb42d33-c2a2-4763-90e4-ff1702fc9951",
-    "reminderDate": "2020-03-30",
-    "scheduledFor": "2020-04-01",
-    "shortenedUrl": "https://rvkn.app/3330eb10",
-    "status": "AVAILABLE",
-    "subscriptionId": "3330eb10-8a8c-11ec-a8a3-0242ac120002"
-  }
+{
+  "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
+  "subscriptionId": "a0436d32-9a26-11ec-b909-a98e7c184206",
+  "scheduledFor": "2022-08-17",
+  "reminderDate": "2022-08-16",
+  "graceDate": "2022-08-18",
+  "amount": "42",
+  "status": "EXPIRED",
+  "shortenedUrl": "https://rvkn.app/a98e7c184206"
+}
 ```
 
 ### HTTP Request
