@@ -392,7 +392,7 @@ This endpoint finds a scheduled payment under a business account by id
 |  *string*, *path*       |                                                                                   |
 | `subscriptionId`        | The id of the subscription                                                        |
 |  *string*, *path*       |                                                                                   |
-| `scheduledId`           | The id of the schedule that allows you to manage the lifecycle of the subscription|                               
+| `scheduleId`            | The id of the schedule that allows you to manage the lifecycle of the subscription|                               
 |  *string*, *path*       |                                                                                   |
 
 ### Responses
@@ -402,7 +402,7 @@ This endpoint finds a scheduled payment under a business account by id
 | 200  | PaymentSchedule record created successfully                |
 | 401  | Unauthorized                                               |
 | 403  | Operation not permitted for this business                  |
-| 404  | Invalid businessId, subscriptionId or scheduledId supplied |
+| 404  | Invalid businessId, subscriptionId or scheduleId supplied |
 
 
 
