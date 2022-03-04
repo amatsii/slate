@@ -607,14 +607,14 @@ This endpoint schedule payments for this subscription using the order and amount
 
 ### Responses
 
-| Code | Description                                             |
-|------|---------------------------------------------------------|
-| 200  | Payments schedules cancelled successfully               |
-| 201  | Created                                                 |
-| 400  | Invalid data supplied for creation of payment schedules |
-| 401  | Unauthorized                                            |
-| 403  | Operation not permitted for this business               |
-| 404  | Invalid businessId or subscriptionId supplied           |
+| Code | Description                                               |
+|------|-----------------------------------------------------------|
+| 200  | Payments schedules cancelled successfully                 | 
+| 201  | Created                                                   |
+| 400  | Invalid data supplied for cancelling of payment schedules |
+| 401  | Unauthorized                                              |
+| 403  | Operation not permitted for this business                 |
+| 404  | Invalid businessId or subscriptionId supplied             |
 
 ## Find all subscriptions for a customer by customerId
 
