@@ -491,7 +491,7 @@ This endpoint updates a PaymentSchedule record
 |  *string*, *path*    |                                     |
 | `subscriptionId`     | The id of the subscription          |
 |  *string*, *path*    |                                     |
-| `payload`            | payload                             |
+| `payload`            | The body of the request             |
 |  *body*              |                                     |
 
 ### Responses
