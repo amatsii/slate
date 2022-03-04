@@ -479,6 +479,22 @@ This endpoint updates a PaymentSchedule record
 }
 ```
 
+> **Example PaymentSchedule response**
+
+```json
+{
+  "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
+  "subscriptionId": "c0e32-9a26-11ec-b909-e08a7c1955",
+  "scheduledFor": "2022-08-17",
+  "reminderDate": "2022-03-16",
+  "graceDate": "2022-03-18",
+  "amount": "42",
+  "status": "ACTIVE",
+  "shortenedUrl": "https://rvkn.app/0242ac5562b9"
+}
+```
+
+
 ### HTTP Request
 
 `PUT`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule
