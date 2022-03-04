@@ -477,13 +477,8 @@ This endpoint updates a PaymentSchedule record
 ```json
 {
   "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
-  "subscriptionId": "a0436d32-9a26-11ec-b909-a98e7c184206",
-  "scheduledFor": "2022-08-17",
-  "reminderDate": "2022-08-16",
-  "graceDate": "2022-08-18",
   "amount": "42",
-  "status": "EXPIRED",
-  "shortenedUrl": "https://rvkn.app/a98e7c184206"
+  "date": "2022-08-17"
 }
 ```
 
