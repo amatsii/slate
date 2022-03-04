@@ -28,12 +28,9 @@ This API reference provides information on the endpoints and how to use them.
 Take note that your business must be marked as an enterprise and be provided with credentials by contacting the sales department of Reveknew.
 When enterprise features is provided to you, you will be able to see the businessId that you need in all the API calls.
 
-The Reveknew API can be accessed via the base urls below.
+The Reveknew API can be accessed via the base url below.
 
-Production base url: `https://api.reveknew.net`
-
-
-UAT base url: `https://uat.api.reveknew.net`
+`https://api.reveknew.net`
 
 # Authentication
 This API supports this mode of authentication:
@@ -282,14 +279,14 @@ If `startdate` is not specified, billing will start immediately. The `startDate`
 
 ### Responses
 
-| Code | Description                                    |
-|------|------------------------------------------------|
-| 200  | Subscription record updated successfully       | 
-| 201  | Created                                        |
-| 400  | Invalid data supplied for creation of customer |
-| 401  | Unauthorized                                   |
-| 403  | Operation not permitted for this business      |
-| 404  | Invalid businessId supplied                    |
+| Code | Description                                                 |
+|------|-------------------------------------------------------------|
+| 200  | Subscription record updated successfully                    |  
+| 201  | Created                                                     |
+| 400  | Invalid data supplied for creation of a subscription record |
+| 401  | Unauthorized                                                |
+| 403  | Operation not permitted for this business                   |
+| 404  | Invalid businessId supplied                                 | 
 
 
 ## Find a subscription under a business account by id 
@@ -395,7 +392,7 @@ This endpoint finds a scheduled payment under a business account by id
 |  *string*, *path*       |                                                                                   |
 | `subscriptionId`        | The id of the subscription                                                        |
 |  *string*, *path*       |                                                                                   |
-| `scheduledId`           | The id of the schedule that allows you to manage the lifecycle of the subscription|                               
+| `scheduleId`            | The id of the schedule that allows you to manage the lifecycle of the subscription|                               
 |  *string*, *path*       |                                                                                   |
 
 ### Responses
@@ -405,7 +402,7 @@ This endpoint finds a scheduled payment under a business account by id
 | 200  | PaymentSchedule record created successfully                |
 | 401  | Unauthorized                                               |
 | 403  | Operation not permitted for this business                  |
-| 404  | Invalid businessId, subscriptionId or scheduledId supplied |
+| 404  | Invalid businessId, subscriptionId or scheduleId supplied |
 
 
 
@@ -467,7 +464,7 @@ This endpoint pauses a subscription record under a business account
 
 
 
-## Update a PaymentSchedule record
+## Update a scheduled subscription payment
 
 This endpoint updates a PaymentSchedule record
 
@@ -475,17 +472,28 @@ This endpoint updates a PaymentSchedule record
 > **Example PaymentSchedule body**
 
 ```json
-  {
-    "amount": 74,
-    "graceDate": "2020-03-13",
-    "id": "6bb42d33-c2a2-4763-90e4-ff1702fc9951",
-    "reminderDate": "2020-03-30",
-    "scheduledFor": "2020-04-01",
-    "shortenedUrl": "https://rvkn.app/3330eb10",
-    "status": "AVAILABLE",
-    "subscriptionId": "3330eb10-8a8c-11ec-a8a3-0242ac120002"
-  }
+{
+  "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
+  "amount": "42",
+  "date": "2022-08-17"
+}
 ```
+
+> **Example PaymentSchedule response**
+
+```json
+{
+  "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
+  "subscriptionId": "c0e32-9a26-11ec-b909-e08a7c1955",
+  "scheduledFor": "2022-08-17",
+  "reminderDate": "2022-03-16",
+  "graceDate": "2022-03-18",
+  "amount": "42",
+  "status": "ACTIVE",
+  "shortenedUrl": "https://rvkn.app/0242ac5562b9"
+}
+```
+
 
 ### HTTP Request
 
@@ -499,19 +507,19 @@ This endpoint updates a PaymentSchedule record
 |  *string*, *path*    |                                     |
 | `subscriptionId`     | The id of the subscription          |
 |  *string*, *path*    |                                     |
-| `updateRequestDto`   | updateRequestDto                    |
+| `payload`            | The body of the request             |
 |  *body*              |                                     |
 
 ### Responses
 
-| Code | Description                                    |
-|------|------------------------------------------------|
-| 200  | Payment schedule updated successfully          |
-| 201  | Created                                        |
-| 400  | Invalid data supplied for creation of customer |
-| 401  | Unauthorized                                   |
-| 403  | Operation not permitted for this business      |
-| 404  | Invalid businessId supplied                    |
+| Code | Description                                                         |
+|------|---------------------------------------------------------------------|
+| 200  | Payment schedule updated successfully                               |
+| 201  | Created                                                             |
+| 400  | Invalid data supplied for updating a scheduled subscription payment |
+| 401  | Unauthorized                                                        |
+| 403  | Operation not permitted for this business                           |
+| 404  | Invalid businessId supplied                                         |
 
 ## Resend SMS notification of payment 
 
@@ -548,7 +556,7 @@ This endpoint resends SMS notification of payment
 |------|---------------------------------------------------------|
 | 200  | SMS notification sent successfully                      |
 | 204  | No Content                                              |
-| 400  | Invalid data supplied for creation of payment schedules |
+| 400  | Invalid data supplied for sending SMS notification      |
 | 401  | Unauthorized                                            |
 | 403  | Operation not permitted for this business               |
 | 404  | Invalid businessId or subscriptionId supplied           |
@@ -576,14 +584,14 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 ### Responses
 
-| Code | Description                                    |
-|------|------------------------------------------------|
-| 200  | Payment schedule generated successfully        |
-| 201  | Created                                        |
-| 400  | Invalid data supplied for creation of customer |
-| 401  | Unauthorized                                   |
-| 403  | Operation not permitted for this business      |
-| 404  | Invalid businessId supplied                    |
+| Code | Description                                                           |
+|------|-----------------------------------------------------------------------|
+| 200  | Payment schedule generated successfully                               |
+| 201  | Created                                                               |
+| 400  | Invalid data supplied for creation of a scheduled subscription payment| 
+| 401  | Unauthorized                                                          |
+| 403  | Operation not permitted for this business                             |
+| 404  | Invalid businessId or subscriptionId supplied                         |
 
 ## Schedule payments for this subscription using the order and amounts specified in the body
 
@@ -615,14 +623,14 @@ This endpoint schedule payments for this subscription using the order and amount
 
 ### Responses
 
-| Code | Description                                             |
-|------|---------------------------------------------------------|
-| 200  | Payments schedules cancelled successfully               |
-| 201  | Created                                                 |
-| 400  | Invalid data supplied for creation of payment schedules |
-| 401  | Unauthorized                                            |
-| 403  | Operation not permitted for this business               |
-| 404  | Invalid businessId or subscriptionId supplied           |
+| Code | Description                                               |
+|------|-----------------------------------------------------------|
+| 200  | Payments schedules cancelled successfully                 | 
+| 201  | Created                                                   |
+| 400  | Invalid data supplied for cancelling of payment schedules |
+| 401  | Unauthorized                                              |
+| 403  | Operation not permitted for this business                 |
+| 404  | Invalid businessId or subscriptionId supplied             |
 
 ## Find all subscriptions for a customer by customerId
 
@@ -787,7 +795,7 @@ This endpoint updates a tier under a business account
 |------|--------------------------------------------|
 | 200  | Tier updated successfully                  |
 | 201  | Created                                    |
-| 400  | Invalid data supplied for creation of tier |
+| 400  | Invalid data supplied for update of tier   |
 | 401  | Unauthorized                               |
 | 403  | Operation not permitted for this business  |
 | 404  | Invalid businessId or tierId supplied      |
