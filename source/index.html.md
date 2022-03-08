@@ -636,7 +636,7 @@ This endpoint schedule payments for this subscription using the order and amount
 
 This endpoint finds all subscriptions for a customer by customerId
 
-> **Example subscription response** 
+> **Example subscription response of a customer with two subscriptions** 
 
 ```json
 
@@ -646,7 +646,6 @@ This endpoint finds all subscriptions for a customer by customerId
     {
       "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
       "amount": 10,
-      "customerId": "cfd0ba27-6ba3-4cee-89fa-084f9e04ff43",
       "nextBillingDate": "2022-04-30T10:30:18Z",
       "schedules": [
         {
