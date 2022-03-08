@@ -639,26 +639,49 @@ This endpoint finds all subscriptions for a customer by customerId
 > **Example subscription response** 
 
 ```json
-  {
 
-  "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
-  "amount": 10,
-  "customerId": "cfd0ba27-6ba3-4cee-89fa-084f9e04ff43",
-  "nextBillingDate": "2022-04-28T10:30:18Z",
-  "schedules": [
+{
+  "customerId": "dccdbc81-91bc-4a1f-9eb2-078283fb835b",
+  "subscriptions": [
     {
-      "amount": 30,
-      "graceDate": "2022-04-29",
-      "reminderDate": "2022-04-27",
-      "scheduledFor": "2022-04-30",
-      "shortenedUrl": "https://rvkn.app/084f9e04ff43",
-      "status": "CANCELLED"
+      "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
+      "amount": 10,
+      "customerId": "cfd0ba27-6ba3-4cee-89fa-084f9e04ff43",
+      "nextBillingDate": "2022-04-30T10:30:18Z",
+      "schedules": [
+        {
+          "amount": 30,
+          "graceDate": "2022-04-29",
+          "reminderDate": "2022-04-27",
+          "scheduledFor": "2022-04-30",
+          "shortenedUrl": "https://rvkn.app/084f9e04ff43",
+          "status": "ACTIVE"
+        }
+      ],
+      "startDate": "2022-04-30",
+      "status": "ACTIVE",
+      "tierId": "9d37205c-9ed1-11ec-b909-0242ac120002"
+    },
+    {
+      "id": "c2322093-7b47-498b-8f52-a61eac64046b",
+      "amount": 10,
+      "nextBillingDate": "2022-06-01T07:14:29Z",
+      "schedules": [
+        {
+          "amount": 30,
+          "graceDate": "2022-06-02",
+          "reminderDate": "2022-05-28",
+          "scheduledFor": "2022-06-01",
+          "shortenedUrl": "https://rvkn.app/078283fb835b",
+          "status": "ACTIVE"
+        }
+      ],
+      "startDate": "2022-06-01",
+      "status": "ACTIVE",
+      "tierId": "397bd03f-6c52-4fd9-9607-be8c2b34cd9e"
     }
-  ],
-  "startDate": "2022-05-01",
-  "status": "ACTIVE",
-  "tierId": "9d37205c-9ed1-11ec-b909-0242ac120002"
-  }
+  ]
+}
 ```
 
 
