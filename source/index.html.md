@@ -636,7 +636,7 @@ This endpoint schedule payments for this subscription using the order and amount
 
 This endpoint finds all subscriptions for a customer by customerId
 
-> Example subscription response 
+> **Example subscription response** 
 
 ```json
   {
