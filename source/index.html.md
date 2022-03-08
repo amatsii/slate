@@ -636,6 +636,32 @@ This endpoint schedule payments for this subscription using the order and amount
 
 This endpoint finds all subscriptions for a customer by customerId
 
+> Example subscription response 
+
+```json
+  {
+
+  "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
+  "amount": 10,
+  "customerId": "cfd0ba27-6ba3-4cee-89fa-084f9e04ff43",
+  "nextBillingDate": "2022-04-28T10:30:18Z",
+  "schedules": [
+    {
+      "amount": 30,
+      "graceDate": "2022-04-29",
+      "reminderDate": "2022-04-27",
+      "scheduledFor": "2022-04-30",
+      "shortenedUrl": "https://rvkn.app/084f9e04ff43",
+      "status": "CANCELLED"
+    }
+  ],
+  "startDate": "2022-05-01",
+  "status": "ACTIVE",
+  "tierId": "9d37205c-9ed1-11ec-b909-0242ac120002"
+  }
+```
+
+
 ### HTTP Request
 
 `GET`  /enterprise/v1/subscriptions/{businessId}/customer/{customerId}
