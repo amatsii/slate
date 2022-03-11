@@ -374,7 +374,7 @@ This endpoint finds a scheduled payment under a business account by id
   "scheduledFor": "2022-03-27",
   "reminderDate": "2022-03-26",
   "graceDate": "2022-03-28",
-  "amount": "50",
+  "amount": 50,
   "status": "SUSPENDED",
   "shortenedUrl": "https://rvkn.app/e08a7c183209"
 }
@@ -474,7 +474,7 @@ This endpoint updates a PaymentSchedule record
 ```json
 {
   "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
-  "amount": "42",
+  "amount": 42,
   "date": "2022-08-17"
 }
 ```
@@ -566,6 +566,15 @@ This endpoint resends SMS notification of payment
 ## Schedule payments for this subscription using the dates and amounts specified in the body 
 
 This endpoint schedule payments for this subscription using the dates and amounts specified in the body
+
+> **Example payment scheduling body**
+
+```json
+{
+  "amount": 30,
+  "date": "2022-04-30"
+}
+```
 
 ### HTTP Request
 
