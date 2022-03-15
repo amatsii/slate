@@ -374,7 +374,7 @@ This endpoint finds a scheduled payment under a business account by id
   "scheduledFor": "2022-03-27",
   "reminderDate": "2022-03-26",
   "graceDate": "2022-03-28",
-  "amount": "50",
+  "amount": 50,
   "status": "SUSPENDED",
   "shortenedUrl": "https://rvkn.app/e08a7c183209"
 }
@@ -474,7 +474,7 @@ This endpoint updates a PaymentSchedule record
 ```json
 {
   "id": "b546a9cb4-9a26-11ec-b909-0242ac5562b9",
-  "amount": "42",
+  "amount": 42,
   "date": "2022-08-17"
 }
 ```
@@ -567,6 +567,60 @@ This endpoint resends SMS notification of payment
 
 This endpoint schedule payments for this subscription using the dates and amounts specified in the body
 
+> **Example payment scheduling body**
+
+```json
+[
+  {
+     "date": "2022-04-30",
+     "amount": 30
+  },
+  {
+     "date": "2022-06-30",
+     "amount": 20
+  },
+  {
+     "date": "2022-05-30",
+     "amount": 25
+  }
+]
+
+```
+
+> **Example response**
+
+```json
+
+{
+  "customerId": "dccdbc81-91bc-4a1f-9eb2-078283fb835b",
+  "subscriptions": 
+    {
+      "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
+      "amount": 10,
+      "nextBillingDate": "2022-04-30T10:30:18Z",
+      "schedules": 
+        [
+          {
+            "date": "2022-04-30",
+            "amount": 30
+          },
+          {
+            "date": "2022-05-30",
+            "amount": 25
+          },
+          {
+            "date": "2022-06-30",
+            "amount": 20
+          }
+        ],
+      "startDate": "2022-04-30",
+      "status": "ACTIVE",
+      "tierId": "9d37205c-9ed1-11ec-b909-0242ac120002"
+    }
+   
+}
+```
+
 ### HTTP Request
 
 `POST`  /enterprise/v1/subscriptions/{businessId}/{subscriptionId}/schedule/date
@@ -636,10 +690,9 @@ This endpoint schedule payments for this subscription using the order and amount
 
 This endpoint finds all subscriptions for a customer by customerId
 
-> **Example subscription response of a customer with two subscriptions** 
+> **Example subscription response for a customer with two subscriptions**
 
 ```json
-
 {
   "customerId": "dccdbc81-91bc-4a1f-9eb2-078283fb835b",
   "subscriptions": [
@@ -682,6 +735,8 @@ This endpoint finds all subscriptions for a customer by customerId
   ]
 }
 ```
+
+
 
 
 ### HTTP Request
@@ -847,3 +902,5 @@ This endpoint updates a tier under a business account
 | 401  | Unauthorized                               |
 | 403  | Operation not permitted for this business  |
 | 404  | Invalid businessId or tierId supplied      |
+
+
