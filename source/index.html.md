@@ -593,7 +593,7 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 {
   "customerId": "dccdbc81-91bc-4a1f-9eb2-078283fb835b",
-  "subscriptions": [
+  "subscriptions": 
     {
       "id": "9d37205c-9ed1-11ec-b909-0242ac120002",
       "amount": 10,
@@ -616,31 +616,8 @@ This endpoint schedule payments for this subscription using the dates and amount
       "startDate": "2022-04-30",
       "status": "ACTIVE",
       "tierId": "9d37205c-9ed1-11ec-b909-0242ac120002"
-    },
-    {
-      "id": "c2322093-7b47-498b-8f52-a61eac64046b",
-      "amount": 15,
-      "nextBillingDate": "2022-05-30T07:14:29Z",
-      "schedules":
-        [
-          {
-            "date": "2022-05-30",
-            "amount": 25
-          },
-          {
-            "date": "2022-06-30",
-            "amount": 20
-          },
-          {
-            "date": "2022-07-30",
-            "amount": 10
-          }
-        ],
-      "startDate": "2022-05-30",
-      "status": "ACTIVE",
-      "tierId": "397bd03f-6c52-4fd9-9607-be8c2b34cd9e"
     }
-  ]
+   
 }
 ```
 
