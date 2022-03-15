@@ -691,20 +691,20 @@ This endpoint finds all subscriptions for a customer by customerId
       "amount": 15,
       "nextBillingDate": "2022-05-30T07:14:29Z",
       "schedules":
-      [
-        {
-          "date": "2022-05-30",
-          "amount": 25
-        },
-        {
-          "date": "2022-06-30",
-          "amount": 20
-        },
-        {
-          "date": "2022-07-30",
-          "amount": 10
-        }
-      ],
+        [
+          {
+            "date": "2022-05-30",
+            "amount": 25
+          },
+          {
+            "date": "2022-06-30",
+            "amount": 20
+          },
+          {
+            "date": "2022-07-30",
+            "amount": 10
+          }
+        ],
       "startDate": "2022-05-30",
       "status": "ACTIVE",
       "tierId": "397bd03f-6c52-4fd9-9607-be8c2b34cd9e"
