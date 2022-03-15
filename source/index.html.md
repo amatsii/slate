@@ -570,10 +570,20 @@ This endpoint schedule payments for this subscription using the dates and amount
 > **Example payment scheduling body**
 
 ```json
+[
 {
-  "amount": 30,
-  "date": "2022-04-30"
-}
+  "date": "2022-04-30",
+  "amount": 30
+},
+  {
+    "date": "2022-05-30",
+    "amount": "25"
+  },
+  {
+    "date": "2022-06-30",
+    "amount": "20"
+  }
+]
 ```
 
 ### HTTP Request
