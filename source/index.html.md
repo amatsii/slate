@@ -657,15 +657,15 @@ This endpoint schedule payments for this subscription using the order and amount
 [
   {
     "amount": 20,
-    "date": "2022-04-30"
+    "order" : 0
   },
   {
     "amount": 40,
-    "date": "2022-05-30"
+    "order" : 1
   },
   {
     "amount": 60,
-    "date": "2022-06-30"
+    "order" :  2
   }
 ]
 ```
