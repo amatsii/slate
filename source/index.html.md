@@ -657,15 +657,15 @@ This endpoint schedule payments for this subscription using the order and amount
 [
   {
     "amount": 20,
-    "order": 0
+    "date": "2022-04-30"
   },
   {
     "amount": 40,
-    "order": 1
+    "date": "2022-05-30"
   },
   {
     "amount": 60,
-    "order": 2
+    "date": "2022-06-30"
   }
 ]
 ```
@@ -679,21 +679,21 @@ This endpoint schedule payments for this subscription using the order and amount
   "subscriptions": 
     {
       "id": "e537205a-7bd1-45ac-b709-0242ac1125879",
-      "amount": 10,
+      "amount": 15,
       "nextBillingDate": "2022-03-30T10:30:18Z",
       "schedules":
         [
           {
             "amount": 20,
-            "order" : 0
+            "date" : "2022-04-30"
           },
           {
             "amount": 40,
-            "order" : 1
+            "date" : "2022-05-30"
           },
           {
             "amount": 60,
-            "order" : 2
+            "date" : "2022-06-30"
           }
         ],
       "startDate": "2022-03-30",
