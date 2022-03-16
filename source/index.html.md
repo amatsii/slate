@@ -651,14 +651,59 @@ This endpoint schedule payments for this subscription using the dates and amount
 
 This endpoint schedule payments for this subscription using the order and amounts specified in the body
 
-> **Example request**
+> **Example body**
 
 ```json
+[
   {
-    "amount": 27,
+    "amount": 20,
     "order": 0
+  },
+  {
+    "amount": 40,
+    "order": 1
+  },
+  {
+    "amount": 60,
+    "order": 2
   }
+]
 ```
+
+> **Example response for a schedule payment of a subscription using the order of payments**
+
+```json
+
+{
+  "customerId": "91c2ebca-a516-11ec-b909-0242ac120002",
+  "subscriptions": 
+    {
+      "id": "e537205a-7bd1-45ac-b709-0242ac1125879",
+      "amount": 10,
+      "nextBillingDate": "2022-03-30T10:30:18Z",
+      "schedules":
+       [
+          {
+            "amount": 20,
+            "order" : 0
+          },
+          {
+            "amount": 40,
+            "order" : 1
+          },
+          {
+            "amount": 60,
+            "order" : 2
+          }
+       ],
+      "startDate": "2022-03-30",
+      "status": "ACTIVE",
+      "tierId": "82db6e66-a516-11ec-b909-0242ac120002"
+    }
+   
+}
+```
+
 
 ### HTTP Request
 
