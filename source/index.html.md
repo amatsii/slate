@@ -682,7 +682,7 @@ This endpoint schedule payments for this subscription using the order and amount
       "amount": 10,
       "nextBillingDate": "2022-03-30T10:30:18Z",
       "schedules":
-       [
+        [
           {
             "amount": 20,
             "order" : 0
@@ -695,7 +695,7 @@ This endpoint schedule payments for this subscription using the order and amount
             "amount": 60,
             "order" : 2
           }
-       ],
+        ],
       "startDate": "2022-03-30",
       "status": "ACTIVE",
       "tierId": "82db6e66-a516-11ec-b909-0242ac120002"
