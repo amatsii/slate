@@ -183,7 +183,7 @@ This endpoint finds  customer record by its id
 
 This endpoint loads customers by csv files
 
-### HTTP REQUEST
+### HTTP Request
 
 `POST` /enterprise/v1/customers/{businessId}/upload
 
