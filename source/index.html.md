@@ -185,7 +185,7 @@ This endpoint loads customers by csv files
 
 ### HTTP REQUEST
 
-`POST` /enterprise/v1/customers//{businessId}/upload
+`POST` /enterprise/v1/customers/{businessId}/upload
 
 ### Path Parameters
 
