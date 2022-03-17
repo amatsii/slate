@@ -179,6 +179,32 @@ This endpoint finds  customer record by its id
 | 404  | Invalid businessId supplied               |
 
 
+## Upload a csv file containing customer records
+
+This endpoint loads customers by csv files
+
+### HTTP REQUEST
+
+`POST` /enterprise/v1/customers//{businessId}/upload
+
+### Path Parameters
+
+| Parameter            | Description                             |
+|----------------------|-----------------------------------------|
+| `businessId`         | The unique account key of the business  |
+| *string*, *path*     |                                         |
+
+### Responses
+
+| Code | Description                                                                       |
+|------|-----------------------------------------------------------------------------------|
+| 200  | A report object showing which of the customer records were successfully processed | 
+| 400  | No csv file included, or invalid records found in csv file                        |
+| 403  | Operation not permitted for this business                                         |
+| 404  | Invalid businessId or no csv file supplied                                        |
+
+
+
 
 # Subscriptions
 
