@@ -189,10 +189,12 @@ This endpoint loads customers by csv files
 
 ### Path Parameters
 
-| Parameter            | Description                             |
-|----------------------|-----------------------------------------|
-| `businessId`         | The unique account key of the business  |
-| *string*, *path*     |                                         |
+| Parameter            | Description                                     |
+|----------------------|-------------------------------------------------|
+| `businessId`         | The unique account key of the business          |
+| *string*, *path*     |                                                 |
+| `form`               | The the csv file in a mutlipart form submission |
+| *multipartfile*      |                                                 |
 
 ### Responses
 
