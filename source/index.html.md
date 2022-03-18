@@ -193,8 +193,8 @@ This endpoint loads customers by csv files
 |----------------------|-------------------------------------------------|
 | `businessId`         | The unique account key of the business          |
 | *string*, *path*     |                                                 |
-| `file`               | The csv file in a multipart form submission |
-| *form field*      |                                                 |
+| `file`               | The csv file in a multipart form submission     |
+| *form field*         |                                                 |
 
 ### Responses
 
@@ -206,10 +206,33 @@ This endpoint loads customers by csv files
 | 404  | Invalid businessId or no csv file supplied                                        |
 
 
+## Obtain the results of a customer csv import via import id
+
+This endpoint fetches a particular result of loading a CSV file
+
+### HTTP Request
+
+`GET` /enterprise/v1/customers/{businessId}/upload/{importId}
+
+### Path Parameters
+
+| Parameter            | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| `businessId`         | The unique account key of the business                         |
+| *string*, *path*     |                                                                |
+| `importId`           | The unique number used to identify the record in the database  |
+| *string*, *path*     |                                                                |
+
+### Responses
+
+| Code | Description                                                                                                             |
+|------|----------------------------------------------------------------------------------|
+| 200  | A report object showing which of the customer records were successfully processed| 
+| 403  | Operation not permitted for this business                                        |
+| 404  | Invalid businessId or importId supplied                                          |
 
 
 # Subscriptions
-
 
 ## Create a subscription record under a business account
 
