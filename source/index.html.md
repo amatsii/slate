@@ -181,6 +181,24 @@ This endpoint finds  customer record by its id
 
 ## Upload a csv file containing customer records
 
+>**Example body**
+
+```json
+{
+  "entries": [
+    {
+      "customerNum": "4466",
+      "firstName": "Sarah",
+      "imported": true,
+      "lastName": "Kimber",
+      "phoneNo": "0247736845",
+      "phoneNoValid": true
+    }
+  ],
+  "id": "7359ba7e-a6c4-11ec-b909-0242ac120002"
+}
+```
+
 This endpoint loads customers by csv files
 
 ### HTTP Request
@@ -209,6 +227,24 @@ This endpoint loads customers by csv files
 ## Obtain the results of a customer csv import via import id
 
 This endpoint fetches a particular result of loading a CSV file
+
+>**Example response results**
+
+```json
+{
+  "entries": [
+    {
+      "customerNum": "2219",
+      "firstName": "Maryann",
+      "imported": true,
+      "lastName": "Lilian",
+      "phoneNo": "0556687845",
+      "phoneNoValid": true
+    }
+  ],
+  "id": "6b953afd-c0e0-4045-8696-65c7712ff079"
+}
+```
 
 ### HTTP Request
 
