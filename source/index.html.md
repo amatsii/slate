@@ -193,8 +193,8 @@ This endpoint loads customers by csv files
 |----------------------|-------------------------------------------------|
 | `businessId`         | The unique account key of the business          |
 | *string*, *path*     |                                                 |
-| `file`               | The csv file in a mutlipart form submission |
-| *multipartfile*      |                                                 |
+| `file`               | The csv file in a multipart form submission |
+| *form field*      |                                                 |
 
 ### Responses
 
