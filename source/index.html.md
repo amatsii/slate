@@ -181,7 +181,7 @@ This endpoint finds  customer record by its id
 
 ## Upload a csv file containing customer records
 
->**Example body**
+>**Example body for uploading a csv file containing customer records**
 
 ```json
 {
@@ -228,7 +228,7 @@ This endpoint loads customers by csv files
 
 This endpoint fetches a particular result of loading a CSV file
 
->**Example response results**
+>**Example response for obtaining the results of a customer csv import via import id**
 
 ```json
 {
