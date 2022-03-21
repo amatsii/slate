@@ -269,6 +269,7 @@ This endpoint fetches a particular result of loading a CSV file
 | Code | Description                                                                                                             |
 |------|----------------------------------------------------------------------------------|
 | 200  | A report object showing which of the customer records were successfully processed| 
+| 401  | Unauthorized                                                                     |
 | 403  | Operation not permitted for this business                                        |
 | 404  | Invalid businessId or importId supplied                                          |
 
