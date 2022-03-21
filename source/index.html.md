@@ -276,9 +276,9 @@ This endpoint fetches a particular result of loading a CSV file
 | 404  | Invalid businessId or importId supplied                                          |
 
 
-## Obtains the results of all customer csv imports for a business
+## Fetch results for csv imports
 
-This endpoint fetches all imports of a business
+This endpoint fetches all csv imports of a business
 
 >**Example response for obtaining the results of all customer csv imports**
 
@@ -297,6 +297,20 @@ This endpoint fetches all imports of a business
       }
    ],
     "id": "8e353b55-c0e0-4045-4451-41e7522ac445"
+  },
+  {
+    "entries":
+    [
+      {
+        "customerNum": "1552",
+        "firstName": "Tim",
+        "imported": true,
+        "lastName": "Brook",
+        "phoneNo": "02442142654",
+        "phoneNoValid": true
+      }
+    ],
+    "id": "29400ed2-a93c-11ec-b909-0242ac120002" 
   }
 ]
 ```
