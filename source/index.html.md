@@ -179,7 +179,7 @@ This endpoint finds  customer record by its id
 | 404  | Invalid businessId supplied               |
 
 
-## Upload a csv file containing customer records
+## Upload customer csv file
 
 This endpoint loads customers by csv files
 
@@ -231,7 +231,7 @@ The CSV file must have the following records, and must have a heading matching t
 | 404  | Invalid businessId or no csv file supplied                                        |
 
 
-## Obtain the results of a customer csv import via import id
+## Fetch customer csv import record
 
 This endpoint fetches a particular result of loading a CSV file
 
