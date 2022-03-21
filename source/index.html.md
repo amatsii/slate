@@ -183,6 +183,31 @@ This endpoint finds  customer record by its id
 
 This endpoint loads customers by csv files
 
+>**Example json output for uploading a csv file containing customer records**
+
+```json
+{
+  "entries": [
+    {
+      "customerNum": "4466",
+      "firstName": "Sarah",
+      "imported": true,
+      "lastName": "Kimber",
+      "phoneNo": "0247736845",
+      "phoneNoValid": true
+    }
+  ],
+  "id": "7359ba7e-a6c4-11ec-b909-0242ac120002"
+}
+```
+
+The CSV file must have the following records, and must have a heading matching the following.
+
+**First name;Last name;Phone number;Customer number**
+
+* `Customer number` is not required and can be empty.
+
+
 ### HTTP Request
 
 `POST` /enterprise/v1/customers/{businessId}/upload
@@ -193,8 +218,8 @@ This endpoint loads customers by csv files
 |----------------------|-------------------------------------------------|
 | `businessId`         | The unique account key of the business          |
 | *string*, *path*     |                                                 |
-| `file`               | The csv file in a multipart form submission |
-| *form field*      |                                                 |
+| `file`               | The csv file in a multipart form submission     |
+| *form field*         |                                                 |
 
 ### Responses
 
@@ -206,10 +231,52 @@ This endpoint loads customers by csv files
 | 404  | Invalid businessId or no csv file supplied                                        |
 
 
+## Obtain the results of a customer csv import via import id
+
+This endpoint fetches a particular result of loading a CSV file
+
+>**Example response for obtaining the results of a customer csv import via import id**
+
+```json
+{
+  "entries": [
+    {
+      "customerNum": "2219",
+      "firstName": "Maryann",
+      "imported": true,
+      "lastName": "Lilian",
+      "phoneNo": "0556687845",
+      "phoneNoValid": true
+    }
+  ],
+  "id": "6b953afd-c0e0-4045-8696-65c7712ff079"
+}
+```
+
+### HTTP Request
+
+`GET` /enterprise/v1/customers/{businessId}/upload/{importId}
+
+### Path Parameters
+
+| Parameter            | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| `businessId`         | The unique account key of the business                         |
+| *string*, *path*     |                                                                |
+| `importId`           | The unique number used to identify the record in the database  |
+| *string*, *path*     |                                                                |
+
+### Responses
+
+| Code | Description                                                                                                             |
+|------|----------------------------------------------------------------------------------|
+| 200  | A report object showing which of the customer records were successfully processed| 
+| 401  | Unauthorized                                                                     |
+| 403  | Operation not permitted for this business                                        |
+| 404  | Invalid businessId or importId supplied                                          |
 
 
 # Subscriptions
-
 
 ## Create a subscription record under a business account
 
