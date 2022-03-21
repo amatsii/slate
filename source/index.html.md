@@ -280,7 +280,7 @@ This endpoint fetches a particular result of loading a CSV file
 
 This endpoint fetches all imports of a business
 
->**Example response for obtaining the results of a customer csv import via import id**
+>**Example response for obtaining the results of all customer csv imports**
 
 ```json
 [
