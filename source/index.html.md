@@ -201,8 +201,14 @@ This endpoint loads customers by csv files
 }
 ```
 
-To format the CSV, the CSV file must have the following records, and must have a heading matching the following.
-First name;Last name;Phone number;Customer number
+The CSV file must have the following records, and must have a heading matching the following.
+
+**First name;Last name;Phone number;Customer number**
+
+* `Customer number` is not required and can be empty.
+
+
+
 
 
 
