@@ -276,6 +276,54 @@ This endpoint fetches a particular result of loading a CSV file
 | 404  | Invalid businessId or importId supplied                                          |
 
 
+## Obtains the results of all customer csv imports for a business
+
+This endpoint fetches all imports of a business
+
+>**Example response for obtaining the results of a customer csv import via import id**
+
+```json
+[
+  {
+    "entries": 
+    [
+      {
+        "customerNum": "1228",
+        "firstName": "Anthony",
+        "imported": true,
+        "lastName": "Davids",
+        "phoneNo": "0556675878",
+        "phoneNoValid": true
+      }
+   ],
+    "id": "8e353b55-c0e0-4045-4451-41e7522ac445"
+  }
+]
+```
+
+### HTTP Request
+
+`GET` /enterprise/v1/customers/{businessId}/upload
+
+### Path Parameters
+
+| Parameter            | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| `businessId`         | The unique account key of the business                         |
+| *string*, *path*     |                                                                |
+| `importId`           | The unique number used to identify the record in the database  |
+| *string*, *path*     |                                                                |
+
+### Responses
+
+| Code | Description                                                                                                            |
+|------|------------------------------------------------------------------------------------------------------------------------|
+| 200  | A list of report objects showing which of the customer records were successfully processed, ordered in descending order| 
+| 403  | Operation not permitted for this business                                                                              |
+| 404  | Invalid businessId supplied                                                                                |
+
+
+
 # Subscriptions
 
 ## Create a subscription record under a business account
@@ -318,6 +366,9 @@ This endpoint creates a new subscription record under a business account.
 | *string*, *path*     |                                             |
 | `subscription`       | Details of subscription from the customer   |
 | *body*               |                                             |
+
+
+
 
 
 ### Subscription policy
