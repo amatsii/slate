@@ -203,7 +203,7 @@ This endpoint loads customers by csv files
 
 The CSV file must have the following records, and must have a heading matching the following.
 
-**First name;Last name;Phone number;Customer number**
+**FIRST NAME;LAST NAME;PHONE NUMBER;CUSTOMER NUMBER**
 
 * `Customer number` is not required and can be empty.
 
