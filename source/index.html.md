@@ -311,8 +311,6 @@ This endpoint fetches all imports of a business
 |----------------------|----------------------------------------------------------------|
 | `businessId`         | The unique account key of the business                         |
 | *string*, *path*     |                                                                |
-| `importId`           | The unique number used to identify the record in the database  |
-| *string*, *path*     |                                                                |
 
 ### Responses
 
