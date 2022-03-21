@@ -181,6 +181,8 @@ This endpoint finds  customer record by its id
 
 ## Upload a csv file containing customer records
 
+This endpoint loads customers by csv files
+
 >**Example body for uploading a csv file containing customer records**
 
 ```json
@@ -199,7 +201,10 @@ This endpoint finds  customer record by its id
 }
 ```
 
-This endpoint loads customers by csv files
+To format the CSV, the CSV file must have the following records, and must have a heading matching the following.
+First name;Last name;Phone number;Customer number
+
+
 
 ### HTTP Request
 
