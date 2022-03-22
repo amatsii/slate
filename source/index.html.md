@@ -179,7 +179,7 @@ This endpoint finds  customer record by its id
 | 404  | Invalid businessId supplied               |
 
 
-## Upload a csv file containing customer records
+## Upload customer csv file
 
 This endpoint loads customers by csv files
 
@@ -231,7 +231,7 @@ The CSV file must have the following records, and must have a heading matching t
 | 404  | Invalid businessId or no csv file supplied                                        |
 
 
-## Obtain the results of a customer csv import via import id
+## Fetch customer csv import record
 
 This endpoint fetches a particular result of loading a CSV file
 
@@ -276,6 +276,66 @@ This endpoint fetches a particular result of loading a CSV file
 | 404  | Invalid businessId or importId supplied                                          |
 
 
+## Fetch customer csv import list
+
+This endpoint fetches all csv imports of a business
+
+>**Example response for obtaining the results of all customer csv imports**
+
+```json
+[
+  {
+    "entries": 
+    [
+      {
+        "customerNum": "1228",
+        "firstName": "Anthony",
+        "imported": true,
+        "lastName": "Davids",
+        "phoneNo": "0556675878",
+        "phoneNoValid": true
+      }
+   ],
+    "id": "8e353b55-c0e0-4045-4451-41e7522ac445"
+  },
+  {
+    "entries":
+    [
+      {
+        "customerNum": "1552",
+        "firstName": "Tim",
+        "imported": true,
+        "lastName": "Brook",
+        "phoneNo": "02442142654",
+        "phoneNoValid": true
+      }
+    ],
+    "id": "29400ed2-a93c-11ec-b909-0242ac120002" 
+  }
+]
+```
+
+### HTTP Request
+
+`GET` /enterprise/v1/customers/{businessId}/upload
+
+### Path Parameters
+
+| Parameter            | Description                                                    |
+|----------------------|----------------------------------------------------------------|
+| `businessId`         | The unique account key of the business                         |
+| *string*, *path*     |                                                                |
+
+### Responses
+
+| Code | Description                                                                                                            |
+|------|------------------------------------------------------------------------------------------------------------------------|
+| 200  | A list of report objects showing which of the customer records were successfully processed, ordered in descending order| 
+| 403  | Operation not permitted for this business                                                                              |
+| 404  | Invalid businessId supplied                                                                                |
+
+
+
 # Subscriptions
 
 ## Create a subscription record under a business account
@@ -318,6 +378,9 @@ This endpoint creates a new subscription record under a business account.
 | *string*, *path*     |                                             |
 | `subscription`       | Details of subscription from the customer   |
 | *body*               |                                             |
+
+
+
 
 
 ### Subscription policy
