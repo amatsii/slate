@@ -276,7 +276,7 @@ This endpoint fetches a particular result of loading a CSV file
 | 404  | Invalid businessId or importId supplied                                          |
 
 
-## Fetch results for csv imports
+## Fetch customer csv import record
 
 This endpoint fetches all csv imports of a business
 
